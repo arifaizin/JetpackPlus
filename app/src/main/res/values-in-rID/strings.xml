@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Katalog Film</string>
+    <string name="movie_title">Judul film</string>
+    <string name="release_date">2018</string>
+    <string name="movie_overview">Ikhtisar</string>
+    <string name="title_activity_main_tab">Katalog Film</string>
+    <string name="tab_text_1">Film</string>
+    <string name="tab_text_2">Acara TV</string>
+    <string name="change_language_settings">Ubah Pengaturan Bahasa</string>
+    <string name="loading">Memuat</string>
+    <string name="waiting_text">Mohon tunggu sebentar</string>
+    <string name="error">Error !</string>
+    <string name="something_wrong">Oops.. Terjadi kesalahan</string>
+    <string name="favorite">Favorit</string>
+    <string name="no_data">Data Kosong</string>
+</resources>
