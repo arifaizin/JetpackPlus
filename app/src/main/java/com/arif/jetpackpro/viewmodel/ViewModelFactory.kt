@@ -5,11 +5,15 @@ import com.arif.jetpackpro.util.Injection
 import android.app.Application
 import androidx.lifecycle.ViewModelProvider
 import com.arif.jetpackpro.datasource.MovieRepository
+import javax.inject.Inject
+import javax.inject.Singleton
 
-
-class ViewModelFactory private constructor(private val movieRepository: MovieRepository) :
+@Singleton
+//TODO 1: Add @Inject - Dagger tau bagaimana ViewModelFactoey dibuat, namun masih belum tau bagaimana MovieRepository dibuat
+class ViewModelFactory @Inject constructor(private val movieRepository: MovieRepository) :
     ViewModelProvider.NewInstanceFactory() {
 
+    @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return when {
             modelClass.isAssignableFrom(MovieViewModel::class.java) -> MovieViewModel(movieRepository) as T
@@ -19,19 +23,19 @@ class ViewModelFactory private constructor(private val movieRepository: MovieRep
         }
     }
 
-    companion object {
-        @Volatile
-        private var INSTANCE: ViewModelFactory? = null
-
-        fun getInstance(application: Application): ViewModelFactory? {
-            if (INSTANCE == null) {
-                synchronized(ViewModelFactory::class.java) {
-                    if (INSTANCE == null) {
-                        INSTANCE = ViewModelFactory(Injection.provideRepository(application))
-                    }
-                }
-            }
-            return INSTANCE
-        }
-    }
+//    companion object {
+//        @Volatile
+//        private var INSTANCE: ViewModelFactory? = null
+//
+//        fun getInstance(application: Application): ViewModelFactory? {
+//            if (INSTANCE == null) {
+//                synchronized(ViewModelFactory::class.java) {
+//                    if (INSTANCE == null) {
+//                        INSTANCE = ViewModelFactory(Injection.provideRepository(application))
+//                    }
+//                }
+//            }
+//            return INSTANCE
+//        }
+//    }
 }

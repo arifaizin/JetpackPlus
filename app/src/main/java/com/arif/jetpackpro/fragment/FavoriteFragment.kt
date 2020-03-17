@@ -1,6 +1,7 @@
 package com.arif.jetpackpro.fragment
 
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -14,6 +15,7 @@ import androidx.paging.PagedList
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import cn.pedant.SweetAlert.SweetAlertDialog
+import com.arif.jetpackpro.MyApplication
 import com.arif.jetpackpro.R
 import com.arif.jetpackpro.activity.DetailActivity
 import com.arif.jetpackpro.adapter.ListMoviePagedAdapter
@@ -28,6 +30,7 @@ import com.arif.jetpackpro.viewmodel.FavoriteViewModel
 import com.arif.jetpackpro.viewmodel.ViewModelFactory
 import kotlinx.android.synthetic.main.fragment_favorite.*
 import org.jetbrains.anko.startActivity
+import javax.inject.Inject
 
 class FavoriteFragment : Fragment() {
     private lateinit var progressDialog: SweetAlertDialog
@@ -98,9 +101,17 @@ class FavoriteFragment : Fragment() {
         errorDialog.show()
     }
 
+    override fun onAttach(context: Context) {
+        (context.applicationContext as MyApplication).appComponent.inject(this)
+        super.onAttach(context)
+    }
+
+    @Inject
+    lateinit var factory: ViewModelFactory
+
     private fun obtainViewModel(activity: FragmentActivity): FavoriteViewModel {
         // Use a Factory to inject dependencies into the ViewModel
-        val factory = ViewModelFactory.getInstance(activity.application)
+//        val factory = ViewModelFactory.getInstance(activity.application)
         return ViewModelProviders.of(activity, factory).get(FavoriteViewModel::class.java)
     }
 

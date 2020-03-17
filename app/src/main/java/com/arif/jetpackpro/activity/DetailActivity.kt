@@ -1,11 +1,13 @@
 package com.arif.jetpackpro.activity
 
+import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProviders
 import com.arif.jetpackpro.BuildConfig
+import com.arif.jetpackpro.MyApplication
 import com.arif.jetpackpro.R
 import com.arif.jetpackpro.model.movie.MovieModel
 import com.arif.jetpackpro.model.tvshow.TvShowModel
@@ -13,12 +15,14 @@ import com.arif.jetpackpro.viewmodel.DetailMovieViewModel
 import com.arif.jetpackpro.viewmodel.ViewModelFactory
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_detail.*
+import javax.inject.Inject
 
 class DetailActivity : AppCompatActivity() {
 
     private lateinit var detailMovieViewModel: DetailMovieViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        (application as MyApplication).appComponent.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
 
@@ -80,9 +84,11 @@ class DetailActivity : AppCompatActivity() {
         else detailButtonFavorite.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_action_not_favorite))
     }
 
+    @Inject
+    lateinit var factory: ViewModelFactory
     private fun obtainViewModel(activity: FragmentActivity): DetailMovieViewModel {
         // Use a Factory to inject dependencies into the ViewModel
-        val factory = ViewModelFactory.getInstance(activity.application)
+//        val factory = ViewModelFactory.getInstance(activity.application)
         return ViewModelProviders.of(activity, factory).get(DetailMovieViewModel::class.java)
     }
 }
