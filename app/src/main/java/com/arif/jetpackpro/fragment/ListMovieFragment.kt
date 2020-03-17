@@ -106,8 +106,8 @@ class ListMovieFragment : androidx.fragment.app.Fragment() {
     }
 
     override fun onAttach(context: Context) {
-        (context.applicationContext as MyApplication).appComponent.inject(this)
         super.onAttach(context)
+        (context.applicationContext as MyApplication).appComponent.inject(this)
     }
     @Inject
     lateinit var factory: ViewModelFactory

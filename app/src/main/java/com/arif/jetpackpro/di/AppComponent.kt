@@ -27,8 +27,8 @@ interface AppComponent {
     }
 
     fun inject(activity: DetailActivity)
-    fun inject(activity: ListMovieFragment)
-    fun inject(activity: FavoriteFragment)
+    fun inject(fragment: ListMovieFragment)
+    fun inject(fragment: FavoriteFragment)
 }
 
 //TODO 3 : Add @Module - Ngasih tau dagger bagaimana suatu kelas terbentuk
