@@ -1,8 +1,6 @@
 package com.arif.jetpackpro.viewmodel
 
 import androidx.lifecycle.ViewModel
-import com.arif.jetpackpro.util.Injection
-import android.app.Application
 import androidx.lifecycle.ViewModelProvider
 import com.arif.jetpackpro.datasource.MovieRepository
 import javax.inject.Inject
