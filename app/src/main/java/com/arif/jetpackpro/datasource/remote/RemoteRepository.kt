@@ -4,23 +4,24 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.arif.jetpackpro.model.movie.MovieModel
 import com.arif.jetpackpro.model.tvshow.TvShowModel
-import com.arif.jetpackpro.util.EspressoIdlingResource
 import com.arif.jetpackpro.retrofit.ApiConfig
+import com.arif.jetpackpro.util.EspressoIdlingResource
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import javax.inject.Singleton
 
-
+@Singleton
 class RemoteRepository {
-    companion object {
-        private var INSTANCE: RemoteRepository? = null
-
-        fun getInstance(): RemoteRepository {
-            if (INSTANCE == null) {
-                INSTANCE = RemoteRepository()
-            }
-            return INSTANCE as RemoteRepository
-        }
-    }
+//    companion object {
+//        private var INSTANCE: RemoteRepository? = null
+//
+//        fun getInstance(): RemoteRepository {
+//            if (INSTANCE == null) {
+//                INSTANCE = RemoteRepository()
+//            }
+//            return INSTANCE as RemoteRepository
+//        }
+//    }
 
     fun getAllMoviesAsLiveData(page: Int): LiveData<ApiResponse<List<MovieModel>>>{
         EspressoIdlingResource.increment()

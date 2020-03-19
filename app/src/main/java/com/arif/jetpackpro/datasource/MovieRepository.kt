@@ -11,8 +11,7 @@ import com.arif.jetpackpro.model.tvshow.TvShowModel
 import com.arif.jetpackpro.util.AppExecutors
 import com.arif.jetpackpro.valueobject.Resource
 
-
-class MovieRepository(
+class MovieRepository constructor(
     private var localRepository: LocalRepository,
     private var remoteRepository: RemoteRepository,
     private var appExecutors: AppExecutors
@@ -21,18 +20,18 @@ class MovieRepository(
         @Volatile
         private var INSTANCE: MovieRepository? = null
 
-        fun getInstance(
-            localRepository: LocalRepository,
-            remoteData: RemoteRepository,
-            appExecutors: AppExecutors
-        ): MovieRepository {
-            if (INSTANCE == null) {
-                synchronized(MovieRepository::class.java) {
-                    INSTANCE = MovieRepository(localRepository, remoteData, appExecutors)
-                }
-            }
-            return INSTANCE as MovieRepository
-        }
+//        fun getInstance(
+//            localRepository: LocalRepository,
+//            remoteData: RemoteRepository,
+//            appExecutors: AppExecutors
+//        ): MovieRepository {
+//            if (INSTANCE == null) {
+//                synchronized(MovieRepository::class.java) {
+//                    INSTANCE = MovieRepository(localRepository, remoteData, appExecutors)
+//                }
+//            }
+//            return INSTANCE as MovieRepository
+//        }
     }
 
     override fun getAllMovies(page: Int): LiveData<Resource<PagedList<MovieModel>>> {

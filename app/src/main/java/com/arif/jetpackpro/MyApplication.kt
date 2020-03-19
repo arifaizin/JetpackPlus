@@ -1,7 +1,6 @@
 package com.arif.jetpackpro
 
 import android.app.Application
-import android.os.UserManager
 import com.arif.jetpackpro.di.AppComponent
 import com.arif.jetpackpro.di.DaggerAppComponent
 

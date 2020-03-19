@@ -4,9 +4,9 @@ import androidx.paging.DataSource
 import com.arif.jetpackpro.model.movie.MovieModel
 import com.arif.jetpackpro.model.tvshow.TvShowModel
 import com.arif.jetpackpro.room.MovieDao
+import javax.inject.Singleton
 
-
-class LocalRepository private constructor(private val mMovieDao: MovieDao) {
+class LocalRepository constructor(private val mMovieDao: MovieDao) {
 
     fun getAllMoviesAsPaged(): DataSource.Factory<Int, MovieModel> = mMovieDao.getMovies()
 
