@@ -10,8 +10,11 @@ import com.arif.jetpackpro.model.movie.MovieModel
 import com.arif.jetpackpro.model.tvshow.TvShowModel
 import com.arif.jetpackpro.util.AppExecutors
 import com.arif.jetpackpro.valueobject.Resource
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class MovieRepository constructor(
+@Singleton
+class MovieRepository @Inject constructor(
     private var localRepository: LocalRepository,
     private var remoteRepository: RemoteRepository,
     private var appExecutors: AppExecutors

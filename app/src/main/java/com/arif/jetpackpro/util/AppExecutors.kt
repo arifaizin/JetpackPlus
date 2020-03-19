@@ -6,7 +6,6 @@ import androidx.annotation.VisibleForTesting
 import java.util.concurrent.Executor
 import javax.inject.Singleton
 
-@Singleton
 open class AppExecutors @VisibleForTesting
 constructor(private val diskIO: Executor, private val mainThread: Executor) {
 

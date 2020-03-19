@@ -8,10 +8,11 @@ import com.arif.jetpackpro.retrofit.ApiConfig
 import com.arif.jetpackpro.util.EspressoIdlingResource
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class RemoteRepository {
+class RemoteRepository @Inject constructor() {
 //    companion object {
 //        private var INSTANCE: RemoteRepository? = null
 //

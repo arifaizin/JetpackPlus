@@ -3,9 +3,6 @@ package com.arif.jetpackpro.di
 import android.content.Context
 import androidx.room.Room
 import com.arif.jetpackpro.activity.DetailActivity
-import com.arif.jetpackpro.datasource.MovieRepository
-import com.arif.jetpackpro.datasource.local.LocalRepository
-import com.arif.jetpackpro.datasource.remote.RemoteRepository
 import com.arif.jetpackpro.fragment.FavoriteFragment
 import com.arif.jetpackpro.fragment.ListMovieFragment
 import com.arif.jetpackpro.room.MovieDao
@@ -50,17 +47,17 @@ class RepositoryModule {
 //        return MovieRepository(context)
 //    }
 
-    @Singleton
-    @Provides
-    fun provideRepository(localRepository: LocalRepository, remoteRepository: RemoteRepository, appExecutors: AppExecutors): MovieRepository {
-        return MovieRepository(localRepository, remoteRepository, appExecutors)
-    }
+//    @Singleton
+//    @Provides
+//    fun provideRepository(localRepository: LocalRepository, remoteRepository: RemoteRepository, appExecutors: AppExecutors): MovieRepository {
+//        return MovieRepository(localRepository, remoteRepository, appExecutors)
+//    }
 
-    @Singleton
-    @Provides
-    fun provideRemote(): RemoteRepository {
-        return RemoteRepository()
-    }
+//    @Singleton
+//    @Provides
+//    fun provideRemote(): RemoteRepository {
+//        return RemoteRepository()
+//    }
 
     @Singleton
     @Provides
@@ -87,9 +84,9 @@ class DatabaseModule {
         return database.movieDao()
     }
 
-    @Singleton
-    @Provides
-    fun provideLocal(dao: MovieDao): LocalRepository {
-        return LocalRepository.getInstance(dao)
-    }
+//    @Singleton
+//    @Provides
+//    fun provideLocal(dao: MovieDao): LocalRepository {
+//        return LocalRepository.getInstance(dao)
+//    }
 }
