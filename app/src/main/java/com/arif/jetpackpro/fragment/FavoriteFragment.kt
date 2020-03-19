@@ -2,7 +2,6 @@ package com.arif.jetpackpro.fragment
 
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,6 +27,7 @@ import com.arif.jetpackpro.viewmodel.FavoriteViewModel
 import com.arif.jetpackpro.viewmodel.ViewModelFactory
 import kotlinx.android.synthetic.main.fragment_favorite.*
 import org.jetbrains.anko.startActivity
+import org.koin.android.ext.android.inject
 
 class FavoriteFragment : Fragment() {
     private lateinit var progressDialog: SweetAlertDialog
@@ -98,9 +98,10 @@ class FavoriteFragment : Fragment() {
         errorDialog.show()
     }
 
+    private val factory: ViewModelFactory by inject()
     private fun obtainViewModel(activity: FragmentActivity): FavoriteViewModel {
         // Use a Factory to inject dependencies into the ViewModel
-        val factory = ViewModelFactory.getInstance(activity.application)
+//        val factory = ViewModelFactory.getInstance(activity.application)
         return ViewModelProviders.of(activity, factory).get(FavoriteViewModel::class.java)
     }
 

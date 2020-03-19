@@ -55,7 +55,7 @@ dependencies {
     //unit test
     testImplementation 'junit:junit:4.12'
     testImplementation "org.mockito:mockito-core:$mockito_version"
-    testImplementation "org.mockito:mockito-android:$mockito_version"
+//    testImplementation "org.mockito:mockito-android:$mockito_version"
     testImplementation "org.mockito:mockito-inline:$mockito_version"
 
     //instrument test
@@ -97,5 +97,7 @@ dependencies {
     //paging
     implementation 'androidx.paging:paging-runtime:2.1.0'
     implementation 'com.github.markomilos:paginate:0.5.1'
+
+    implementation "org.koin:koin-android:2.1.3"
 
 }

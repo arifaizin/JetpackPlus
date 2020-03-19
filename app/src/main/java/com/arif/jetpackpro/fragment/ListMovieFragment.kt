@@ -24,6 +24,7 @@ import com.arif.jetpackpro.viewmodel.MovieViewModel
 import com.arif.jetpackpro.viewmodel.ViewModelFactory
 import kotlinx.android.synthetic.main.fragment_main_tab.*
 import org.jetbrains.anko.startActivity
+import org.koin.android.ext.android.inject
 
 class ListMovieFragment : androidx.fragment.app.Fragment() {
 
@@ -100,9 +101,11 @@ class ListMovieFragment : androidx.fragment.app.Fragment() {
         errorDialog.show()
     }
 
+    private val factory: ViewModelFactory by inject()
+
     private fun obtainViewModel(activity: FragmentActivity): MovieViewModel {
         // Use a Factory to inject dependencies into the ViewModel
-        val factory = ViewModelFactory.getInstance(activity.application)
+//        val factory = ViewModelFactory.getInstance(activity.application)
         return ViewModelProviders.of(activity, factory).get(MovieViewModel::class.java)
     }
 

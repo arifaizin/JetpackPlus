@@ -13,6 +13,7 @@ import com.arif.jetpackpro.viewmodel.DetailMovieViewModel
 import com.arif.jetpackpro.viewmodel.ViewModelFactory
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_detail.*
+import org.koin.android.ext.android.inject
 
 class DetailActivity : AppCompatActivity() {
 
@@ -80,9 +81,11 @@ class DetailActivity : AppCompatActivity() {
         else detailButtonFavorite.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_action_not_favorite))
     }
 
+
+    private val factory: ViewModelFactory by inject()
     private fun obtainViewModel(activity: FragmentActivity): DetailMovieViewModel {
         // Use a Factory to inject dependencies into the ViewModel
-        val factory = ViewModelFactory.getInstance(activity.application)
+//        val factory = ViewModelFactory.getInstance(activity.application)
         return ViewModelProviders.of(activity, factory).get(DetailMovieViewModel::class.java)
     }
 }

@@ -1,13 +1,11 @@
 package com.arif.jetpackpro.viewmodel
 
 import androidx.lifecycle.ViewModel
-import com.arif.jetpackpro.util.Injection
-import android.app.Application
 import androidx.lifecycle.ViewModelProvider
 import com.arif.jetpackpro.datasource.MovieRepository
 
 
-class ViewModelFactory private constructor(private val movieRepository: MovieRepository) :
+class ViewModelFactory(private val movieRepository: MovieRepository) :
     ViewModelProvider.NewInstanceFactory() {
 
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
@@ -19,19 +17,19 @@ class ViewModelFactory private constructor(private val movieRepository: MovieRep
         }
     }
 
-    companion object {
-        @Volatile
-        private var INSTANCE: ViewModelFactory? = null
-
-        fun getInstance(application: Application): ViewModelFactory? {
-            if (INSTANCE == null) {
-                synchronized(ViewModelFactory::class.java) {
-                    if (INSTANCE == null) {
-                        INSTANCE = ViewModelFactory(Injection.provideRepository(application))
-                    }
-                }
-            }
-            return INSTANCE
-        }
-    }
+//    companion object {
+//        @Volatile
+//        private var INSTANCE: ViewModelFactory? = null
+//
+//        fun getInstance(application: Application): ViewModelFactory? {
+//            if (INSTANCE == null) {
+//                synchronized(ViewModelFactory::class.java) {
+//                    if (INSTANCE == null) {
+//                        INSTANCE = ViewModelFactory(Injection.provideRepository(application))
+//                    }
+//                }
+//            }
+//            return INSTANCE
+//        }
+//    }
 }
