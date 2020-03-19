@@ -5,9 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import androidx.paging.PagedList
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -21,16 +19,17 @@ import com.arif.jetpackpro.model.tvshow.TvShowModel
 import com.arif.jetpackpro.util.ItemClickSupport
 import com.arif.jetpackpro.valueobject.Status
 import com.arif.jetpackpro.viewmodel.MovieViewModel
-import com.arif.jetpackpro.viewmodel.ViewModelFactory
 import kotlinx.android.synthetic.main.fragment_main_tab.*
 import org.jetbrains.anko.startActivity
-import org.koin.android.ext.android.inject
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class ListMovieFragment : androidx.fragment.app.Fragment() {
 
     private var page = 1
     private var index: Int? = 1
-    private lateinit var movieViewModel: MovieViewModel
+
+//    lateinit var movieViewModel: MovieViewModel
+    val movieViewModel: MovieViewModel by viewModel()
 
     private lateinit var progressDialog: SweetAlertDialog
 
@@ -50,7 +49,7 @@ class ListMovieFragment : androidx.fragment.app.Fragment() {
     }
 
     private fun getDataMovieOnline() {
-        movieViewModel = obtainViewModel(activity as FragmentActivity)
+//        movieViewModel = obtainViewModel(activity as FragmentActivity)
         if (index == 1) {
             val adapter = ListMoviePagedAdapter()
             recycleMovie.adapter = adapter
@@ -101,13 +100,13 @@ class ListMovieFragment : androidx.fragment.app.Fragment() {
         errorDialog.show()
     }
 
-    private val factory: ViewModelFactory by inject()
+//    private val factory: ViewModelFactory by inject()
 
-    private fun obtainViewModel(activity: FragmentActivity): MovieViewModel {
-        // Use a Factory to inject dependencies into the ViewModel
-//        val factory = ViewModelFactory.getInstance(activity.application)
-        return ViewModelProviders.of(activity, factory).get(MovieViewModel::class.java)
-    }
+//    private fun obtainViewModel(activity: FragmentActivity): MovieViewModel {
+//        // Use a Factory to inject dependencies into the ViewModel
+////        val factory = ViewModelFactory.getInstance(activity.application)
+//        return ViewModelProviders.of(activity, factory).get(MovieViewModel::class.java)
+//    }
 
     private fun showMovieList(
         listMovie: PagedList<MovieModel>,

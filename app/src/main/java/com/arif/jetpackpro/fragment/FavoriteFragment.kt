@@ -6,9 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import androidx.paging.PagedList
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -24,15 +22,16 @@ import com.arif.jetpackpro.util.gone
 import com.arif.jetpackpro.util.visible
 import com.arif.jetpackpro.valueobject.Status
 import com.arif.jetpackpro.viewmodel.FavoriteViewModel
-import com.arif.jetpackpro.viewmodel.ViewModelFactory
 import kotlinx.android.synthetic.main.fragment_favorite.*
 import org.jetbrains.anko.startActivity
-import org.koin.android.ext.android.inject
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class FavoriteFragment : Fragment() {
     private lateinit var progressDialog: SweetAlertDialog
     private var index: Int? = 0
-    private lateinit var movieViewModel: FavoriteViewModel
+//    private lateinit var movieViewModel: FavoriteViewModel
+    private val movieViewModel: FavoriteViewModel by viewModel()
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_favorite, container, false)
@@ -51,7 +50,7 @@ class FavoriteFragment : Fragment() {
     }
 
     private fun getDataMovieOnline() {
-        movieViewModel = obtainViewModel(activity as FragmentActivity)
+//        movieViewModel = obtainViewModel(activity as FragmentActivity)
         if (index == 1) {
             val adapter = ListMoviePagedAdapter()
             recycleMovie.adapter = adapter
@@ -98,12 +97,12 @@ class FavoriteFragment : Fragment() {
         errorDialog.show()
     }
 
-    private val factory: ViewModelFactory by inject()
-    private fun obtainViewModel(activity: FragmentActivity): FavoriteViewModel {
-        // Use a Factory to inject dependencies into the ViewModel
-//        val factory = ViewModelFactory.getInstance(activity.application)
-        return ViewModelProviders.of(activity, factory).get(FavoriteViewModel::class.java)
-    }
+//    private val factory: ViewModelFactory by inject()
+//    private fun obtainViewModel(activity: FragmentActivity): FavoriteViewModel {
+//        // Use a Factory to inject dependencies into the ViewModel
+////        val factory = ViewModelFactory.getInstance(activity.application)
+//        return ViewModelProviders.of(activity, factory).get(FavoriteViewModel::class.java)
+//    }
 
     private fun showMovieList(
         listMovie: PagedList<MovieModel>,
