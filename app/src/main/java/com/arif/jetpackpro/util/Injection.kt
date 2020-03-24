@@ -12,7 +12,7 @@ class Injection {
         fun provideRepository(application: Application): MovieRepository {
             val database = MovieDatabase.getInstance(application)
 
-            val localRepository = LocalRepository.getInstance(database.academyDao())
+            val localRepository = LocalRepository.getInstance(database.movieDao())
             val remoteRepository = RemoteRepository.getInstance()
             val appExecutors = AppExecutors()
             return MovieRepository.getInstance(localRepository, remoteRepository, appExecutors)

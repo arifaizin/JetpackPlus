@@ -11,7 +11,7 @@ import com.arif.jetpackpro.model.tvshow.TvShowModel
     version = 1,
     exportSchema = false)
 abstract class MovieDatabase : RoomDatabase() {
-    abstract fun academyDao(): MovieDao
+    abstract fun movieDao(): MovieDao
 
     companion object {
         private var INSTANCE: MovieDatabase? = null
