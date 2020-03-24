@@ -34,14 +34,14 @@ class LocalRepository(private val mMovieDao: MovieDao) {
         mMovieDao.updateTvShow(tvShow)
     }
 
-    companion object {
-        private var INSTANCE: LocalRepository? = null
-
-        fun getInstance(academyDao: MovieDao): LocalRepository {
-            if (INSTANCE == null) {
-                INSTANCE = LocalRepository(academyDao)
-            }
-            return INSTANCE as LocalRepository
-        }
-    }
+//    companion object {
+//        private var INSTANCE: LocalRepository? = null
+//
+//        fun getInstance(academyDao: MovieDao): LocalRepository {
+//            if (INSTANCE == null) {
+//                INSTANCE = LocalRepository(academyDao)
+//            }
+//            return INSTANCE as LocalRepository
+//        }
+//    }
 }
