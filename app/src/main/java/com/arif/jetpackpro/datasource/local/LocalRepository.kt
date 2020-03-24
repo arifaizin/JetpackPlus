@@ -6,7 +6,7 @@ import com.arif.jetpackpro.model.tvshow.TvShowModel
 import com.arif.jetpackpro.room.MovieDao
 
 
-class LocalRepository private constructor(private val mMovieDao: MovieDao) {
+class LocalRepository(private val mMovieDao: MovieDao) {
 
     fun getAllMoviesAsPaged(): DataSource.Factory<Int, MovieModel> = mMovieDao.getMovies()
 

@@ -2,6 +2,7 @@ package com.arif.jetpackpro
 
 import android.app.Application
 import android.content.Context
+import androidx.room.Room
 import com.arif.jetpackpro.datasource.MovieRepository
 import com.arif.jetpackpro.datasource.local.LocalRepository
 import com.arif.jetpackpro.datasource.remote.RemoteRepository
@@ -24,25 +25,28 @@ class MyApplication : Application(){
         startKoin{
             androidLogger()
             androidContext(this@MyApplication)
-            modules(viewModelModule)
+            modules(listOf(viewModelModule, databaseModule))
         }
     }
 }
 
 val viewModelModule = module {
-    single { provideRepository(androidContext()) }
     single { ViewModelFactory(get())}
     viewModel { MovieViewModel(get()) }
     viewModel { FavoriteViewModel(get()) }
     viewModel { DetailMovieViewModel(get()) }
-
 }
 
-private fun provideRepository(context: Context): MovieRepository {
-    val database = MovieDatabase.getInstance(context)
-
-    val localRepository = LocalRepository.getInstance(database.academyDao())
-    val remoteRepository = RemoteRepository.getInstance()
-    val appExecutors = AppExecutors()
-    return MovieRepository.getInstance(localRepository, remoteRepository, appExecutors)
+val databaseModule = module {
+    single { get<MovieDatabase>().movieDao()}
+    single { LocalRepository(get()) }
+    single { RemoteRepository() }
+    single { AppExecutors() }
+    single { MovieRepository(get(), get(), get()) }
+    single { provideDatabase(androidContext()) }
 }
+
+fun provideDatabase(context: Context): MovieDatabase = Room.databaseBuilder(
+    context,
+    MovieDatabase::class.java, "Movie.db"
+).build()
