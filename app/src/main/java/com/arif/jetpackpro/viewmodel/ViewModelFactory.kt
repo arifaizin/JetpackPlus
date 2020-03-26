@@ -8,6 +8,7 @@ import com.arif.jetpackpro.datasource.MovieRepository
 class ViewModelFactory(private val movieRepository: MovieRepository) :
     ViewModelProvider.NewInstanceFactory() {
 
+    @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return when {
             modelClass.isAssignableFrom(MovieViewModel::class.java) -> MovieViewModel(movieRepository) as T

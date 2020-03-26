@@ -1,7 +1,7 @@
 package com.arif.jetpackpro
 
-import android.app.Application
 import android.content.Context
+import androidx.multidex.MultiDexApplication
 import androidx.room.Room
 import com.arif.jetpackpro.datasource.MovieRepository
 import com.arif.jetpackpro.datasource.local.LocalRepository
@@ -18,7 +18,7 @@ import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.core.context.startKoin
 import org.koin.dsl.module
 
-class MyApplication : Application(){
+class MyApplication : MultiDexApplication(){
     override fun onCreate() {
         super.onCreate()
         // Start Koin
@@ -50,3 +50,10 @@ fun provideDatabase(context: Context): MovieDatabase = Room.databaseBuilder(
     context,
     MovieDatabase::class.java, "Movie.db"
 ).build()
+
+val databaseTestModule = module {
+    single {
+        Room.inMemoryDatabaseBuilder(androidContext(), MovieDatabase::class.java)
+            .allowMainThreadQueries()
+            .build()    }
+}
