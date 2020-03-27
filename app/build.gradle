@@ -14,7 +14,8 @@ android {
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.arif.jetpackpro.KoinTestRunner"
 
         buildConfigField "String", "BASE_URL", "\"https://api.themoviedb.org/3/\""
         buildConfigField "String", "API_KEY", "\"b08e3495841838f530552c2b261e00b1\""
@@ -34,6 +35,8 @@ android {
     }
     testOptions {
         unitTests.returnDefaultValues = true
+        animationsDisabled = true
+
     }
 }
 
@@ -104,6 +107,7 @@ dependencies {
     implementation "org.koin:koin-android:$koin_version"
     implementation "org.koin:koin-android-viewmodel:$koin_version"
 
+    testImplementation "org.koin:koin-test:$koin_version"
     androidTestImplementation "org.koin:koin-test:$koin_version"
 
     implementation 'com.android.support:multidex:1.0.3'
