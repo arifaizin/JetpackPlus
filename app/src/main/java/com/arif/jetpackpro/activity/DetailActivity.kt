@@ -28,10 +28,10 @@ class DetailActivity : AppCompatActivity() {
 
         val index: Int = intent.getIntExtra("index",0)
         if (index == 1) {
-            val dataMovie: MovieModel = intent.getParcelableExtra("data")
+            val dataMovie: MovieModel = intent.getParcelableExtra("data") as MovieModel
             showDetailMovie(dataMovie)
         } else {
-            val dataTvShow: TvShowModel = intent.getParcelableExtra("data")
+            val dataTvShow: TvShowModel = intent.getParcelableExtra("data") as TvShowModel
             showDetailTvShow(dataTvShow)
         }
     }

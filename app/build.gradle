@@ -55,7 +55,7 @@ dependencies {
     //unit test
     testImplementation 'junit:junit:4.12'
     testImplementation "org.mockito:mockito-core:$mockito_version"
-    testImplementation "org.mockito:mockito-android:$mockito_version"
+//    testImplementation "org.mockito:mockito-android:$mockito_version"
     testImplementation "org.mockito:mockito-inline:$mockito_version"
 
     //instrument test

@@ -1,15 +1,16 @@
 package com.arif.jetpackpro.viewmodel
 
-import androidx.lifecycle.ViewModel
-import com.arif.jetpackpro.util.Injection
 import android.app.Application
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.arif.jetpackpro.datasource.MovieRepository
+import com.arif.jetpackpro.util.Injection
 
 
 class ViewModelFactory private constructor(private val movieRepository: MovieRepository) :
     ViewModelProvider.NewInstanceFactory() {
 
+    @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return when {
             modelClass.isAssignableFrom(MovieViewModel::class.java) -> MovieViewModel(movieRepository) as T
