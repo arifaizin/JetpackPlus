@@ -8,7 +8,7 @@ on:
   push:
     branches: 
       - master
-      - github-action
+      - 'github-action'
   pull_request:
     branches: [ master ]
 
