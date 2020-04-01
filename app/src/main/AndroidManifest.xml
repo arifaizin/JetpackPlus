@@ -19,7 +19,6 @@
         <activity android:name=".activity.FavoriteActivity" />
         <activity
             android:name=".activity.MainTabActivity"
-            android:configChanges="screenSize|keyboard|orientation"
             android:label="@string/title_activity_main_tab"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

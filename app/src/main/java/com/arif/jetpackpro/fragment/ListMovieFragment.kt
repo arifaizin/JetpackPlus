@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.paging.PagedList
@@ -34,7 +35,12 @@ class ListMovieFragment : androidx.fragment.app.Fragment() {
 
     private var page = 1
     private var index: Int? = 1
-    private lateinit var movieViewModel: MovieViewModel
+    @Inject
+    lateinit var factory: ViewModelFactory
+
+    private val movieViewModel: MovieViewModel by viewModels {
+        factory
+    }
 
     private lateinit var progressDialog: SweetAlertDialog
 
@@ -54,12 +60,13 @@ class ListMovieFragment : androidx.fragment.app.Fragment() {
     }
 
     private fun getDataMovieOnline() {
-        movieViewModel = obtainViewModel(activity as FragmentActivity)
+//        movieViewModel = obtainViewModel(activity as FragmentActivity)
         if (index == 1) {
             val adapter = ListMoviePagedAdapter()
             recycleMovie.adapter = adapter
             recycleMovie.hasFixedSize()
-            movieViewModel.getDataMovie(page).observe(this, Observer { movie ->
+            Log.d("tesviewmodel", ""+movieViewModel.hashCode())
+            movieViewModel.getDataMovie(page).observe(viewLifecycleOwner, Observer { movie ->
                 Log.d("tes", ""+movie.status+hashCode())
                 if (movie != null) {
                     when (movie.status) {
@@ -109,14 +116,14 @@ class ListMovieFragment : androidx.fragment.app.Fragment() {
         super.onAttach(context)
         (context.applicationContext as MyApplication).appComponent.inject(this)
     }
-    @Inject
-    lateinit var factory: ViewModelFactory
-
-    private fun obtainViewModel(activity: FragmentActivity): MovieViewModel {
-        // Use a Factory to inject dependencies into the ViewModel
-//        val factory = ViewModelFactory.getInstance(activity.application)
-        return ViewModelProviders.of(activity, factory).get(MovieViewModel::class.java)
-    }
+//    @Inject
+//    lateinit var factory: ViewModelFactory
+//
+//    private fun obtainViewModel(activity: FragmentActivity): MovieViewModel {
+//        // Use a Factory to inject dependencies into the ViewModel
+////        val factory = ViewModelFactory.getInstance(activity.application)
+//        return ViewModelProviders.of(activity, factory).get(MovieViewModel::class.java)
+//    }
 
     private fun showMovieList(
         listMovie: PagedList<MovieModel>,

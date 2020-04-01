@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.paging.PagedList
@@ -27,6 +28,7 @@ import com.arif.jetpackpro.util.gone
 import com.arif.jetpackpro.util.visible
 import com.arif.jetpackpro.valueobject.Status
 import com.arif.jetpackpro.viewmodel.FavoriteViewModel
+import com.arif.jetpackpro.viewmodel.MovieViewModel
 import com.arif.jetpackpro.viewmodel.ViewModelFactory
 import kotlinx.android.synthetic.main.fragment_favorite.*
 import org.jetbrains.anko.startActivity
@@ -35,7 +37,13 @@ import javax.inject.Inject
 class FavoriteFragment : Fragment() {
     private lateinit var progressDialog: SweetAlertDialog
     private var index: Int? = 0
-    private lateinit var movieViewModel: FavoriteViewModel
+
+    @Inject
+    lateinit var factory: ViewModelFactory
+
+    private val movieViewModel: FavoriteViewModel by viewModels {
+        factory
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_favorite, container, false)
@@ -54,11 +62,11 @@ class FavoriteFragment : Fragment() {
     }
 
     private fun getDataMovieOnline() {
-        movieViewModel = obtainViewModel(activity as FragmentActivity)
+//        movieViewModel = obtainViewModel(activity as FragmentActivity)
         if (index == 1) {
             val adapter = ListMoviePagedAdapter()
             recycleMovie.adapter = adapter
-            movieViewModel.getDataMovie().observe(this, Observer { movie ->
+            movieViewModel.getDataMovie().observe(viewLifecycleOwner, Observer { movie ->
                 if (movie != null) {
                     when (movie.status) {
                         Status.LOADING -> progressDialog.show()
@@ -76,7 +84,7 @@ class FavoriteFragment : Fragment() {
         } else {
             val adapter = ListTvShowPagedAdapter()
             recycleMovie.adapter = adapter
-            movieViewModel.getDataTvShow().observe(this, Observer { movie ->
+            movieViewModel.getDataTvShow().observe(viewLifecycleOwner, Observer { movie ->
                 if (movie != null) {
                     when (movie.status) {
                         Status.LOADING -> progressDialog.show()
@@ -106,14 +114,14 @@ class FavoriteFragment : Fragment() {
         (context.applicationContext as MyApplication).appComponent.inject(this)
     }
 
-    @Inject
-    lateinit var factory: ViewModelFactory
-
-    private fun obtainViewModel(activity: FragmentActivity): FavoriteViewModel {
-        // Use a Factory to inject dependencies into the ViewModel
-//        val factory = ViewModelFactory.getInstance(activity.application)
-        return ViewModelProviders.of(activity, factory).get(FavoriteViewModel::class.java)
-    }
+//    @Inject
+//    lateinit var factory: ViewModelFactory
+//
+//    private fun obtainViewModel(activity: FragmentActivity): FavoriteViewModel {
+//        // Use a Factory to inject dependencies into the ViewModel
+////        val factory = ViewModelFactory.getInstance(activity.application)
+//        return ViewModelProviders.of(activity, factory).get(FavoriteViewModel::class.java)
+//    }
 
     private fun showMovieList(
         listMovie: PagedList<MovieModel>,

@@ -1,11 +1,9 @@
 package com.arif.jetpackpro.activity
 
-import android.content.Context
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.fragment.app.FragmentActivity
-import androidx.lifecycle.ViewModelProviders
 import com.arif.jetpackpro.BuildConfig
 import com.arif.jetpackpro.MyApplication
 import com.arif.jetpackpro.R
@@ -19,8 +17,12 @@ import javax.inject.Inject
 
 class DetailActivity : AppCompatActivity() {
 
-    private lateinit var detailMovieViewModel: DetailMovieViewModel
+    @Inject
+    lateinit var factory: ViewModelFactory
 
+    private val detailMovieViewModel: DetailMovieViewModel by viewModels {
+        factory
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         (application as MyApplication).appComponent.inject(this)
         super.onCreate(savedInstanceState)
@@ -28,7 +30,7 @@ class DetailActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
 
-        detailMovieViewModel = obtainViewModel(this)
+//        detailMovieViewModel = obtainViewModel(this)
 
         val index: Int = intent.getIntExtra("index",0)
         if (index == 1) {
@@ -84,11 +86,11 @@ class DetailActivity : AppCompatActivity() {
         else detailButtonFavorite.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_action_not_favorite))
     }
 
-    @Inject
-    lateinit var factory: ViewModelFactory
-    private fun obtainViewModel(activity: FragmentActivity): DetailMovieViewModel {
-        // Use a Factory to inject dependencies into the ViewModel
-//        val factory = ViewModelFactory.getInstance(activity.application)
-        return ViewModelProviders.of(activity, factory).get(DetailMovieViewModel::class.java)
-    }
+//    @Inject
+//    lateinit var factory: ViewModelFactory
+//    private fun obtainViewModel(activity: FragmentActivity): DetailMovieViewModel {
+//        // Use a Factory to inject dependencies into the ViewModel
+////        val factory = ViewModelFactory.getInstance(activity.application)
+//        return ViewModelProviders.of(activity, factory).get(DetailMovieViewModel::class.java)
+//    }
 }

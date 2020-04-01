@@ -4,8 +4,9 @@ import androidx.lifecycle.ViewModel
 import com.arif.jetpackpro.datasource.MovieRepository
 import com.arif.jetpackpro.model.movie.MovieModel
 import com.arif.jetpackpro.model.tvshow.TvShowModel
+import javax.inject.Inject
 
-class DetailMovieViewModel(private var movieRepository: MovieRepository) : ViewModel() {
+class DetailMovieViewModel @Inject constructor(private var movieRepository: MovieRepository) : ViewModel() {
     fun setFavoriteMovie(dataMovie: MovieModel, newStatus:Boolean) =
         movieRepository.setFavoriteMovie(dataMovie, newStatus)
 

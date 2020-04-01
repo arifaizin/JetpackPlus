@@ -7,8 +7,9 @@ import com.arif.jetpackpro.datasource.MovieRepository
 import com.arif.jetpackpro.model.movie.MovieModel
 import com.arif.jetpackpro.model.tvshow.TvShowModel
 import com.arif.jetpackpro.valueobject.Resource
+import javax.inject.Inject
 
-class FavoriteViewModel(private var movieRepository: MovieRepository) : ViewModel() {
+class FavoriteViewModel @Inject constructor(private var movieRepository: MovieRepository) : ViewModel() {
 
     fun getDataMovie(): LiveData<Resource<PagedList<MovieModel>>> = movieRepository.getFavoriteMovies()
 

@@ -9,7 +9,7 @@ import dagger.Provides
 import javax.inject.Singleton
 
 //TODO 3 : Add @Module - Ngasih tau dagger bagaimana suatu kelas terbentuk
-@Module
+@Module(includes = [ViewModelModule::class])
 class DatabaseModule {
     @Singleton // We only want one retrofit instance at any time
     @Provides // Tells Dagger that the Room instance will come from here
