@@ -24,8 +24,8 @@ jobs:
       uses: reactivecircus/android-emulator-runner@v2
       with:
         api-level: 29
-        script: ./gradlew connectedCheck
-     
+        script: bash ./gradlew connectedCheck
+        
   test:
     name: Run Unit Tests
     runs-on: ubuntu-18.04
