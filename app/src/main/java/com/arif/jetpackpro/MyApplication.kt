@@ -25,7 +25,7 @@ class MyApplication : MultiDexApplication(){
         startKoin{
             androidLogger()
             androidContext(this@MyApplication)
-            modules(listOf(viewModelModule, databaseModule, databaseTestModule))
+            modules(listOf(viewModelModule, databaseModule))
         }
     }
 }
@@ -50,15 +50,3 @@ fun provideDatabase(context: Context): MovieDatabase = Room.databaseBuilder(
     context,
     MovieDatabase::class.java, "Movie.db"
 ).build()
-
-val databaseTestModule = module {
-    single { get<MovieDatabase>().movieDao()}
-    single { LocalRepository(get()) }
-    single { RemoteRepository() }
-    single { AppExecutors() }
-    single { MovieRepository(get(), get(), get()) }
-    single {
-        Room.inMemoryDatabaseBuilder(androidContext(), MovieDatabase::class.java)
-            .allowMainThreadQueries()
-            .build()    }
-}

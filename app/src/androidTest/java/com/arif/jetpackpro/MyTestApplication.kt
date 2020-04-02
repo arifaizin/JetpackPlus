@@ -9,9 +9,7 @@ import com.arif.jetpackpro.room.MovieDatabase
 import com.arif.jetpackpro.util.AppExecutors
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
-import org.koin.core.context.loadKoinModules
 import org.koin.core.context.startKoin
-import org.koin.core.module.Module
 import org.koin.dsl.module
 
 class MyTestApplication : MultiDexApplication(){
@@ -23,10 +21,6 @@ class MyTestApplication : MultiDexApplication(){
             androidContext(this@MyTestApplication)
             modules(listOf(viewModelModule, databaseTestModule))
         }
-    }
-
-    internal fun injectModule(module: Module) {
-        loadKoinModules(module)
     }
 }
 
