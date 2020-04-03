@@ -32,7 +32,7 @@ android {
     testOptions {
         unitTests.returnDefaultValues = true
     }
-    testBuildType "release"
+    testBuildType "debug"
 }
 
 androidExtensions {
