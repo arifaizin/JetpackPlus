@@ -63,7 +63,7 @@ class ShowMovieTest {
     fun showDetailTvShow() {
         val tabView = onView(
             allOf(
-                withContentDescription("TV Show"),
+                withContentDescription("Acara TV"),
                 childAtPosition(
                     childAtPosition(
                         withId(R.id.tabs),
