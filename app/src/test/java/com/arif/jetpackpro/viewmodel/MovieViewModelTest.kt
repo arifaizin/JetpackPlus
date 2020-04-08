@@ -5,9 +5,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.paging.PagedList
 import com.arif.jetpackpro.datasource.MovieRepository
-import com.arif.jetpackpro.model.movie.MovieModel
-import com.arif.jetpackpro.model.tvshow.TvShowModel
-import com.arif.jetpackpro.valueobject.Resource
+import com.arifaizin.core.model.movie.MovieModel
+import com.arifaizin.core.model.tvshow.TvShowModel
+import com.arifaizin.core.valueobject.Resource
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test

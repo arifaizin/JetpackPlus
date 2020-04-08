@@ -2,9 +2,9 @@ package com.arif.jetpackpro.datasource
 
 import androidx.lifecycle.LiveData
 import androidx.paging.PagedList
-import com.arif.jetpackpro.model.movie.MovieModel
-import com.arif.jetpackpro.model.tvshow.TvShowModel
-import com.arif.jetpackpro.valueobject.Resource
+import com.arifaizin.core.model.movie.MovieModel
+import com.arifaizin.core.model.tvshow.TvShowModel
+import com.arifaizin.core.valueobject.Resource
 
 interface MovieDataSource {
     fun getAllMovies(page: Int): LiveData<Resource<PagedList<MovieModel>>>

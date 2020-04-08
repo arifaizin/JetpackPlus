@@ -2,7 +2,7 @@ package com.arif.jetpackpro.util
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import com.arif.jetpackpro.R
+import com.arifaizin.core.R
 
 
 class ItemClickSupport(private val mRecyclerView: RecyclerView) {

@@ -1,10 +1,10 @@
-package com.arif.jetpackpro.model.movie
+package com.arifaizin.core.model.tvshow
 
 import com.google.gson.annotations.SerializedName
 import javax.annotation.Generated
 
 @Generated("com.robohorse.robopojogenerator")
-data class MovieResponse(
+data class TvShowResponse(
 
     @field:SerializedName("page")
     val page: Int? = null,
@@ -13,7 +13,7 @@ data class MovieResponse(
     val totalPages: Int? = null,
 
     @field:SerializedName("results")
-    val results: List<MovieModel>? = java.util.ArrayList(),
+    val results: List<TvShowModel>? = ArrayList(),
 
     @field:SerializedName("total_results")
     val totalResults: Int? = null

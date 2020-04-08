@@ -1,6 +1,6 @@
 package com.arif.jetpackpro.utils
 
-import com.arif.jetpackpro.util.AppExecutors
+import com.arifaizin.core.util.AppExecutors
 import java.util.concurrent.Executor
 
 

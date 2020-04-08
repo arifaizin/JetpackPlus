@@ -3,8 +3,8 @@ package com.arif.jetpackpro.room
 import androidx.annotation.WorkerThread
 import androidx.paging.DataSource
 import androidx.room.*
-import com.arif.jetpackpro.model.movie.MovieModel
-import com.arif.jetpackpro.model.tvshow.TvShowModel
+import com.arifaizin.core.model.movie.MovieModel
+import com.arifaizin.core.model.tvshow.TvShowModel
 
 @Dao
 interface MovieDao {

@@ -2,8 +2,8 @@ package com.arif.jetpackpro.viewmodel
 
 import androidx.lifecycle.ViewModel
 import com.arif.jetpackpro.datasource.MovieRepository
-import com.arif.jetpackpro.model.movie.MovieModel
-import com.arif.jetpackpro.model.tvshow.TvShowModel
+import com.arifaizin.core.model.movie.MovieModel
+import com.arifaizin.core.model.tvshow.TvShowModel
 
 class DetailMovieViewModel(private var movieRepository: MovieRepository) : ViewModel() {
     fun setFavoriteMovie(dataMovie: MovieModel, newStatus:Boolean) =

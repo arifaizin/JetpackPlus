@@ -18,12 +18,12 @@ import com.arif.jetpackpro.R
 import com.arif.jetpackpro.activity.DetailActivity
 import com.arif.jetpackpro.adapter.ListMoviePagedAdapter
 import com.arif.jetpackpro.adapter.ListTvShowPagedAdapter
-import com.arif.jetpackpro.model.movie.MovieModel
-import com.arif.jetpackpro.model.tvshow.TvShowModel
 import com.arif.jetpackpro.util.ItemClickSupport
-import com.arif.jetpackpro.valueobject.Status
 import com.arif.jetpackpro.viewmodel.MovieViewModel
 import com.arif.jetpackpro.viewmodel.ViewModelFactory
+import com.arifaizin.core.model.movie.MovieModel
+import com.arifaizin.core.model.tvshow.TvShowModel
+import com.arifaizin.core.valueobject.Status
 import kotlinx.android.synthetic.main.fragment_main_tab.*
 import org.jetbrains.anko.startActivity
 import javax.inject.Inject

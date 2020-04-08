@@ -2,8 +2,8 @@ package com.arif.jetpackpro.room
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.arif.jetpackpro.model.movie.MovieModel
-import com.arif.jetpackpro.model.tvshow.TvShowModel
+import com.arifaizin.core.model.movie.MovieModel
+import com.arifaizin.core.model.tvshow.TvShowModel
 
 @Database(entities = [MovieModel::class, TvShowModel::class],
     version = 1,

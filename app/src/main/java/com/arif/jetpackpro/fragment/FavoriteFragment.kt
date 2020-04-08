@@ -3,7 +3,6 @@ package com.arif.jetpackpro.fragment
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,14 +19,14 @@ import com.arif.jetpackpro.R
 import com.arif.jetpackpro.activity.DetailActivity
 import com.arif.jetpackpro.adapter.ListMoviePagedAdapter
 import com.arif.jetpackpro.adapter.ListTvShowPagedAdapter
-import com.arif.jetpackpro.model.movie.MovieModel
-import com.arif.jetpackpro.model.tvshow.TvShowModel
 import com.arif.jetpackpro.util.ItemClickSupport
 import com.arif.jetpackpro.util.gone
 import com.arif.jetpackpro.util.visible
-import com.arif.jetpackpro.valueobject.Status
 import com.arif.jetpackpro.viewmodel.FavoriteViewModel
 import com.arif.jetpackpro.viewmodel.ViewModelFactory
+import com.arifaizin.core.model.movie.MovieModel
+import com.arifaizin.core.model.tvshow.TvShowModel
+import com.arifaizin.core.valueobject.Status
 import kotlinx.android.synthetic.main.fragment_favorite.*
 import org.jetbrains.anko.startActivity
 import javax.inject.Inject

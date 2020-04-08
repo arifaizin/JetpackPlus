@@ -4,9 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.paging.PagedList
 import com.arif.jetpackpro.datasource.MovieRepository
-import com.arif.jetpackpro.model.movie.MovieModel
-import com.arif.jetpackpro.model.tvshow.TvShowModel
-import com.arif.jetpackpro.valueobject.Resource
+import com.arifaizin.core.model.movie.MovieModel
+import com.arifaizin.core.model.tvshow.TvShowModel
+import com.arifaizin.core.valueobject.Resource
 
 class MovieViewModel(private var movieRepository: MovieRepository) : ViewModel() {
 

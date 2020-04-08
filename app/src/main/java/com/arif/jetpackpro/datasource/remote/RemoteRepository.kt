@@ -2,10 +2,10 @@ package com.arif.jetpackpro.datasource.remote
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.arif.jetpackpro.model.movie.MovieModel
-import com.arif.jetpackpro.model.tvshow.TvShowModel
-import com.arif.jetpackpro.retrofit.ApiConfig
 import com.arif.jetpackpro.util.EspressoIdlingResource
+import com.arifaizin.core.model.movie.MovieModel
+import com.arifaizin.core.model.tvshow.TvShowModel
+import com.arifaizin.core.retrofit.ApiConfig
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import javax.inject.Inject

@@ -15,8 +15,6 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField "String", "BASE_URL", "\"https://api.themoviedb.org/3/\""
-        buildConfigField "String", "API_KEY", "\"b08e3495841838f530552c2b261e00b1\""
         buildConfigField "String", "POSTER_URL", "\"https://image.tmdb.org/t/p/w500/\""
     }
     buildTypes {
@@ -92,13 +90,13 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutine_version"
 
     //retrofit
-    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
-    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
-    implementation "com.squareup.okhttp3:logging-interceptor:$logging_interceptor_version"
-    implementation "org.glassfish:javax.annotation:$javax_annotation_version"
-    implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$retrofit_coroutine_version"
-
-    //room
+//    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+//    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+//    implementation "com.squareup.okhttp3:logging-interceptor:$logging_interceptor_version"
+//    implementation "org.glassfish:javax.annotation:$javax_annotation_version"
+//    implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$retrofit_coroutine_version"
+//
+//    //room
     implementation "androidx.room:room-runtime:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
     androidTestImplementation "androidx.room:room-testing:$room_version"

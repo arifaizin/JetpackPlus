@@ -6,7 +6,7 @@ import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.rule.ActivityTestRule
 import com.arif.jetpackpro.activity.FavoriteActivity
-import com.arif.jetpackpro.model.movie.MovieModel
+import com.arifaizin.core.model.movie.MovieModel
 import com.arif.jetpackpro.room.MovieDao
 import com.arif.jetpackpro.room.MovieDatabase
 import org.junit.*

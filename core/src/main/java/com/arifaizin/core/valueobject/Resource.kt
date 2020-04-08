@@ -1,4 +1,4 @@
-package com.arif.jetpackpro.valueobject
+package com.arifaizin.core.valueobject
 
 import androidx.annotation.Nullable
 

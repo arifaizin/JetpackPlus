@@ -1,6 +1,5 @@
 package com.arif.jetpackpro.activity
 
-import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -9,10 +8,10 @@ import androidx.lifecycle.ViewModelProviders
 import com.arif.jetpackpro.BuildConfig
 import com.arif.jetpackpro.MyApplication
 import com.arif.jetpackpro.R
-import com.arif.jetpackpro.model.movie.MovieModel
-import com.arif.jetpackpro.model.tvshow.TvShowModel
 import com.arif.jetpackpro.viewmodel.DetailMovieViewModel
 import com.arif.jetpackpro.viewmodel.ViewModelFactory
+import com.arifaizin.core.model.movie.MovieModel
+import com.arifaizin.core.model.tvshow.TvShowModel
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_detail.*
 import javax.inject.Inject

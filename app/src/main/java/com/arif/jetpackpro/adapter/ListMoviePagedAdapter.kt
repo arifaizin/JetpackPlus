@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.arif.jetpackpro.BuildConfig
 import com.arif.jetpackpro.R
-import com.arif.jetpackpro.model.movie.MovieModel
+import com.arifaizin.core.model.movie.MovieModel
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_movie.view.*
 

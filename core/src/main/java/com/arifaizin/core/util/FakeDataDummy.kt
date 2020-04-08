@@ -1,7 +1,7 @@
 package com.arif.jetpackpro.util
 
-import com.arif.jetpackpro.model.movie.MovieModel
-import com.arif.jetpackpro.model.tvshow.TvShowModel
+import com.arifaizin.core.model.movie.MovieModel
+import com.arifaizin.core.model.tvshow.TvShowModel
 
 class FakeDataDummy {
     companion object {

@@ -1,4 +1,4 @@
-package com.arifaizin.favorites
+package com.arifaizin.core
 
 import org.junit.Test
 

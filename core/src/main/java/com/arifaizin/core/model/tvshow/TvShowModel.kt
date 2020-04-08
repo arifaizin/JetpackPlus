@@ -1,4 +1,4 @@
-package com.arif.jetpackpro.model.tvshow
+package com.arifaizin.core.model.tvshow
 
 import android.os.Parcelable
 import androidx.annotation.NonNull

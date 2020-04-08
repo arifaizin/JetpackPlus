@@ -4,12 +4,11 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.paging.DataSource
 import com.arif.jetpackpro.datasource.local.LocalRepository
 import com.arif.jetpackpro.datasource.remote.RemoteRepository
-import com.arif.jetpackpro.model.movie.MovieModel
-import com.arif.jetpackpro.model.tvshow.TvShowModel
-import com.arif.jetpackpro.util.FakeDataDummy
+import com.arifaizin.core.model.movie.MovieModel
+import com.arifaizin.core.model.tvshow.TvShowModel
 import com.arif.jetpackpro.utils.InstantAppExecutors
 import com.arif.jetpackpro.utils.PagedListUtil
-import com.arif.jetpackpro.valueobject.Resource
+import com.arifaizin.core.valueobject.Resource
 import com.nhaarman.mockitokotlin2.verify
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull

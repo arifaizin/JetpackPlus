@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import com.arif.jetpackpro.datasource.remote.ApiResponse
 import com.arif.jetpackpro.datasource.remote.StatusResponse
-import com.arif.jetpackpro.util.AppExecutors
-import com.arif.jetpackpro.valueobject.Resource
+import com.arifaizin.core.util.AppExecutors
+import com.arifaizin.core.valueobject.Resource
 
 
 abstract class NetworkBoundResource<ResultType, RequestType>(private val mExecutors: AppExecutors) {

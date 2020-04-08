@@ -1,4 +1,4 @@
-package com.arif.jetpackpro.model.movie
+package com.arifaizin.core.model.movie
 
 import android.os.Parcelable
 import androidx.annotation.NonNull

@@ -1,8 +1,8 @@
-package com.arif.jetpackpro.retrofit
+package com.arifaizin.core.retrofit
 
-import com.arif.jetpackpro.BuildConfig
-import com.arif.jetpackpro.model.movie.MovieResponse
-import com.arif.jetpackpro.model.tvshow.TvShowResponse
+import com.arifaizin.core.BuildConfig
+import com.arifaizin.core.model.movie.MovieResponse
+import com.arifaizin.core.model.tvshow.TvShowResponse
 import kotlinx.coroutines.Deferred
 import retrofit2.http.GET
 import retrofit2.http.Query

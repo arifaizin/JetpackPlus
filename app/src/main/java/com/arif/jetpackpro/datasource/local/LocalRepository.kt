@@ -1,8 +1,8 @@
 package com.arif.jetpackpro.datasource.local
 
 import androidx.paging.DataSource
-import com.arif.jetpackpro.model.movie.MovieModel
-import com.arif.jetpackpro.model.tvshow.TvShowModel
+import com.arifaizin.core.model.movie.MovieModel
+import com.arifaizin.core.model.tvshow.TvShowModel
 import com.arif.jetpackpro.room.MovieDao
 import javax.inject.Inject
 import javax.inject.Singleton

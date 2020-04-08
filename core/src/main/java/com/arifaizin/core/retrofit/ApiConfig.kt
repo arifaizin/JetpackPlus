@@ -1,6 +1,6 @@
-package com.arif.jetpackpro.retrofit
+package com.arifaizin.core.retrofit
 
-import com.arif.jetpackpro.BuildConfig
+import com.arifaizin.core.BuildConfig
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
