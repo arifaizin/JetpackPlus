@@ -24,7 +24,7 @@ class MainFavoriteActivity : AppCompatActivity() {
         tabs.setupWithViewPager(view_pager)
     }
 
-    class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) : FragmentPagerAdapter(fm) {
+    class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) : FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
         private val tabTitles = arrayOf(
             R.string.tab_text_1,
