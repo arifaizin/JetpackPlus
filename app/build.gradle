@@ -35,6 +35,11 @@ android {
             includeAndroidResources = true
         }
     }
+
+
+    dynamicFeatures = [":favorite"]
+
+
 }
 
 androidExtensions {
@@ -42,6 +47,7 @@ androidExtensions {
 }
 
 dependencies {
+    implementation project(':core')
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.0.2'
@@ -107,4 +113,6 @@ dependencies {
     kaptAndroidTest 'com.google.dagger:dagger-compiler:2.26'
 
     testImplementation 'org.robolectric:robolectric:4.3.1'
+
+    implementation 'com.google.android.play:core:1.7.2'
 }

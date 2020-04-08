@@ -3,13 +3,16 @@ package com.arif.jetpackpro.activity
 import android.content.Intent
 import android.os.Bundle
 import android.provider.Settings
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import com.arif.jetpackpro.BuildConfig
 import com.arif.jetpackpro.R
 import com.arif.jetpackpro.adapter.SectionsPagerAdapter
+import com.google.android.play.core.splitinstall.SplitInstallManagerFactory
+import com.google.android.play.core.splitinstall.SplitInstallRequest
 import kotlinx.android.synthetic.main.activity_main_tab.*
-import org.jetbrains.anko.startActivity
 
 
 class MainTabActivity : AppCompatActivity() {
@@ -39,8 +42,32 @@ class MainTabActivity : AppCompatActivity() {
             val mIntent = Intent(Settings.ACTION_LOCALE_SETTINGS)
             startActivity(mIntent)
         } else if (item.itemId == R.id.action_favorite) {
-            this.startActivity<FavoriteActivity>()
+            installFavoriteModule()
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun installFavoriteModule() {
+        val splitInstallManager = SplitInstallManagerFactory.create(applicationContext)
+        val request = SplitInstallRequest.newBuilder()
+            .addModule("favorite")
+            .build()
+
+        splitInstallManager.startInstall(request)
+            .addOnSuccessListener {
+                Log.d("installl", it.toString())
+            }
+            .addOnFailureListener {
+                Log.e("install", it.toString())
+            }
+
+        if (splitInstallManager.installedModules.contains("favorite")) {
+            val i = Intent()
+            i.setClassName(BuildConfig.APPLICATION_ID, "com.arifaizin.favorite.MainFavoriteActivity")
+            i.putExtra("ExtraInt", 3) // Test intent for Dynamic feature
+            startActivity(i)
+        } else {
+            Log.e("intal", "Registration feature is not installed")
+        }
     }
 }
