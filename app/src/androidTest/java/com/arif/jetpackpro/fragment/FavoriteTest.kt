@@ -7,8 +7,8 @@ import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.rule.ActivityTestRule
 import com.arif.jetpackpro.activity.FavoriteActivity
 import com.arifaizin.core.model.movie.MovieModel
-import com.arif.jetpackpro.room.MovieDao
-import com.arif.jetpackpro.room.MovieDatabase
+import com.arifaizin.core.room.MovieDao
+import com.arifaizin.core.room.MovieDatabase
 import org.junit.*
 import org.junit.runner.RunWith
 import javax.inject.Inject

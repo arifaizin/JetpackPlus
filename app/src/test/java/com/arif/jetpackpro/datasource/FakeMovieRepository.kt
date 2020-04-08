@@ -3,20 +3,22 @@ package com.arif.jetpackpro.datasource
 import androidx.lifecycle.LiveData
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
-import com.arif.jetpackpro.datasource.remote.RemoteRepository
+import com.arifaizin.core.datasource.MovieDataSource
+import com.arifaizin.core.datasource.NetworkBoundResource
+import com.arifaizin.core.datasource.remote.RemoteRepository
 import com.arifaizin.core.model.movie.MovieModel
 import com.arifaizin.core.model.tvshow.TvShowModel
-import com.arif.jetpackpro.datasource.local.LocalRepository
+import com.arifaizin.core.datasource.local.LocalRepository
 import com.arifaizin.core.util.AppExecutors
 import com.arifaizin.core.valueobject.Resource
-import com.arif.jetpackpro.datasource.remote.ApiResponse
+import com.arifaizin.core.datasource.remote.ApiResponse
 
 
 class FakeMovieRepository(
     private var localRepository: LocalRepository,
     private var remoteRepository: RemoteRepository,
     private var appExecutors: AppExecutors
-):MovieDataSource {
+): MovieDataSource {
     override fun getAllMovies(page: Int): LiveData<Resource<PagedList<MovieModel>>> {
         return object : NetworkBoundResource<PagedList<MovieModel>, List<MovieModel>>(appExecutors) {
             public override fun loadFromDB(): LiveData<PagedList<MovieModel>> =

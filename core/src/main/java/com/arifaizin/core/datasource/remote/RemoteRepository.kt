@@ -1,4 +1,4 @@
-package com.arif.jetpackpro.datasource.remote
+package com.arifaizin.core.datasource.remote
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -31,7 +31,11 @@ class RemoteRepository @Inject constructor() {
             try {
                 val postsRequest = ApiConfig.getApiService.getMovieAsync(page)
                 val postsResponse = postsRequest.await().results
-                resultMovie.postValue(ApiResponse.success(postsResponse as List<MovieModel>))
+                resultMovie.postValue(
+                    ApiResponse.success(
+                        postsResponse as List<MovieModel>
+                    )
+                )
                 EspressoIdlingResource.decrement()
             } catch (e: Exception) {
             }
@@ -46,7 +50,11 @@ class RemoteRepository @Inject constructor() {
             try {
                 val postsRequest = ApiConfig.getApiService.getTvShowAsync()
                 val postsResponse = postsRequest.await().results
-                resultMovie.postValue(ApiResponse.success(postsResponse as List<TvShowModel>))
+                resultMovie.postValue(
+                    ApiResponse.success(
+                        postsResponse as List<TvShowModel>
+                    )
+                )
                 EspressoIdlingResource.decrement()
             } catch (e: Exception) {
             }

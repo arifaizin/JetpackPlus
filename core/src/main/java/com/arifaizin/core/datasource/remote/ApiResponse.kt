@@ -1,4 +1,4 @@
-package com.arif.jetpackpro.datasource.remote
+package com.arifaizin.core.datasource.remote
 
 import androidx.annotation.Nullable
 
@@ -11,7 +11,11 @@ class ApiResponse<T>(
     companion object {
 
         fun <T> success(@Nullable body: T): ApiResponse<T> {
-            return ApiResponse(StatusResponse.SUCCESS, body, null)
+            return ApiResponse(
+                StatusResponse.SUCCESS,
+                body,
+                null
+            )
         }
 
 //        fun <T> empty(msg: String, @Nullable body: T): ApiResponse<T> {
@@ -19,7 +23,11 @@ class ApiResponse<T>(
 //        }
 
         fun <T> error(msg: String, @Nullable body: T): ApiResponse<T> {
-            return ApiResponse(StatusResponse.ERROR, body, msg)
+            return ApiResponse(
+                StatusResponse.ERROR,
+                body,
+                msg
+            )
         }
     }
 

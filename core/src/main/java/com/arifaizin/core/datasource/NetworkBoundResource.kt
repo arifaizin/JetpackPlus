@@ -1,9 +1,9 @@
-package com.arif.jetpackpro.datasource
+package com.arifaizin.core.datasource
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
-import com.arif.jetpackpro.datasource.remote.ApiResponse
-import com.arif.jetpackpro.datasource.remote.StatusResponse
+import com.arifaizin.core.datasource.remote.ApiResponse
+import com.arifaizin.core.datasource.remote.StatusResponse
 import com.arifaizin.core.util.AppExecutors
 import com.arifaizin.core.valueobject.Resource
 

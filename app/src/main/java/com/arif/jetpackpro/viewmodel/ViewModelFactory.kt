@@ -2,7 +2,7 @@ package com.arif.jetpackpro.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.arif.jetpackpro.datasource.MovieRepository
+import com.arifaizin.core.datasource.MovieRepository
 import javax.inject.Inject
 import javax.inject.Singleton
 

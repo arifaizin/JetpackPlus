@@ -1,4 +1,4 @@
-package com.arif.jetpackpro.datasource
+package com.arifaizin.core.datasource
 
 import androidx.lifecycle.LiveData
 import androidx.paging.PagedList

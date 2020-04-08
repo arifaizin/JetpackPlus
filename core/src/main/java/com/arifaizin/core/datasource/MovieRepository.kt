@@ -1,11 +1,11 @@
-package com.arif.jetpackpro.datasource
+package com.arifaizin.core.datasource
 
 import androidx.lifecycle.LiveData
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
-import com.arif.jetpackpro.datasource.local.LocalRepository
-import com.arif.jetpackpro.datasource.remote.ApiResponse
-import com.arif.jetpackpro.datasource.remote.RemoteRepository
+import com.arifaizin.core.datasource.local.LocalRepository
+import com.arifaizin.core.datasource.remote.ApiResponse
+import com.arifaizin.core.datasource.remote.RemoteRepository
 import com.arifaizin.core.model.movie.MovieModel
 import com.arifaizin.core.model.tvshow.TvShowModel
 import com.arifaizin.core.util.AppExecutors
@@ -18,7 +18,7 @@ class MovieRepository @Inject constructor(
     private var localRepository: LocalRepository,
     private var remoteRepository: RemoteRepository,
     private var appExecutors: AppExecutors
-):MovieDataSource {
+): MovieDataSource {
     companion object {
         @Volatile
         private var INSTANCE: MovieRepository? = null

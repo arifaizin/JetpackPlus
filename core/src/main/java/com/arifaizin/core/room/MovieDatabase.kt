@@ -1,4 +1,4 @@
-package com.arif.jetpackpro.room
+package com.arifaizin.core.room
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
