@@ -1,6 +1,6 @@
-apply plugin: 'com.android.dynamic-feature'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+apply plugin: "com.android.dynamic-feature"
+apply plugin: "kotlin-android"
+apply plugin: "kotlin-android-extensions"
 
 android {
     compileSdkVersion 29
@@ -14,11 +14,12 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation project(':app')
-    implementation 'com.google.android.material:material:1.1.0'
-    implementation "androidx.core:core-ktx:1.2.0"
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation project(":app")
+    implementation "androidx.core:core-ktx:$core_ktx_version"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "com.google.android.material:material:$material_version"
+    implementation "com.airbnb.android:lottie:$lottie_version"
 }
 repositories {
     mavenCentral()
