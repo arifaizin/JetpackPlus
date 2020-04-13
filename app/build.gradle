@@ -5,6 +5,8 @@ apply plugin: "kotlin-android"
 apply plugin: "kotlin-android-extensions"
 apply plugin: "kotlin-kapt"
 
+apply from: '../shared_dependencies.gradle'
+
 android {
     compileSdkVersion 29
     defaultConfig {
@@ -86,8 +88,8 @@ dependencies {
     implementation "org.jetbrains.anko:anko-commons:$anko_version"
 
     //coroutines
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_coroutine_version"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutine_version"
+//    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_coroutine_version"
+//    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutine_version"
 
     //retrofit
 //    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
@@ -105,7 +107,7 @@ dependencies {
     implementation "androidx.paging:paging-runtime:$paging_version"
 
     //dagger
-    implementation "com.google.dagger:dagger:$dagger_version"
+//    implementation "com.google.dagger:dagger:$dagger_version"
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
     kaptAndroidTest "com.google.dagger:dagger-compiler:$dagger_version"
 
