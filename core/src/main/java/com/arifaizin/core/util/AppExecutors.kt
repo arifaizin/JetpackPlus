@@ -2,12 +2,12 @@ package com.arifaizin.core.util
 
 import android.os.Handler
 import android.os.Looper
+import com.arifaizin.core.di.scope.AppScope
 import java.util.concurrent.Executor
 import java.util.concurrent.Executors
 import javax.inject.Inject
-import javax.inject.Singleton
 
-@Singleton
+@AppScope
 open class AppExecutors(
     private val diskIO: Executor,
     private val networkIO: Executor,

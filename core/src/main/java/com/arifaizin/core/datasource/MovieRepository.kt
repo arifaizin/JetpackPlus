@@ -10,10 +10,10 @@ import com.arifaizin.core.model.movie.MovieModel
 import com.arifaizin.core.model.tvshow.TvShowModel
 import com.arifaizin.core.util.AppExecutors
 import com.arifaizin.core.valueobject.Resource
+import com.arifaizin.core.di.scope.AppScope
 import javax.inject.Inject
-import javax.inject.Singleton
 
-@Singleton
+@AppScope
 class MovieRepository @Inject constructor(
     private var localRepository: LocalRepository,
     private var remoteRepository: RemoteRepository,

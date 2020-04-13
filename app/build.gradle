@@ -16,8 +16,6 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
-        buildConfigField "String", "POSTER_URL", "\"https://image.tmdb.org/t/p/w500/\""
     }
     buildTypes {
         release {
@@ -51,14 +49,11 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation "androidx.appcompat:appcompat:$appcompat_version"
-    implementation "androidx.constraintlayout:constraintlayout:$constraint_version"
-    implementation "androidx.cardview:cardview:$cardview_version"
-    implementation "androidx.recyclerview:recyclerview:$recyclerview_version"
+
     implementation "androidx.legacy:legacy-support-v4:$legacysupport_version"
-    implementation "com.google.android.material:material:$material_version"
 
     //lifecycle
-    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+//    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
     kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
 
     //unit test
@@ -79,14 +74,6 @@ dependencies {
     implementation "androidx.test.espresso:espresso-idling-resource:$idling_resource_version"
     androidTestImplementation "androidx.test:rules:$androidx_test_version"
 
-    //ui
-    implementation "com.github.bumptech.glide:glide:$glide_version"
-    implementation "com.github.f0ris.sweetalert:library:$sweetalert_version"
-    implementation "com.airbnb.android:lottie:$lottie_version"
-
-    //anko
-    implementation "org.jetbrains.anko:anko-commons:$anko_version"
-
     //coroutines
 //    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_coroutine_version"
 //    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutine_version"
@@ -99,12 +86,9 @@ dependencies {
 //    implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$retrofit_coroutine_version"
 //
 //    //room
-    implementation "androidx.room:room-runtime:$room_version"
+//    implementation "androidx.room:room-runtime:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
     androidTestImplementation "androidx.room:room-testing:$room_version"
-
-    //paging
-    implementation "androidx.paging:paging-runtime:$paging_version"
 
     //dagger
 //    implementation "com.google.dagger:dagger:$dagger_version"

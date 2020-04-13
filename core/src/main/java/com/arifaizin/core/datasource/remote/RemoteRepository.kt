@@ -2,16 +2,16 @@ package com.arifaizin.core.datasource.remote
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.arif.jetpackpro.util.EspressoIdlingResource
+import com.arifaizin.core.util.EspressoIdlingResource
+import com.arifaizin.core.di.scope.AppScope
 import com.arifaizin.core.model.movie.MovieModel
 import com.arifaizin.core.model.tvshow.TvShowModel
 import com.arifaizin.core.retrofit.ApiConfig
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-import javax.inject.Singleton
 
-@Singleton
+@AppScope
 class RemoteRepository @Inject constructor() {
 //    companion object {
 //        private var INSTANCE: RemoteRepository? = null

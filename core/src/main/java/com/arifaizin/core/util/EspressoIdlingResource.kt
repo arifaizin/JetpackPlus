@@ -1,4 +1,4 @@
-package com.arif.jetpackpro.util
+package com.arifaizin.core.util
 
 import androidx.test.espresso.IdlingResource
 import androidx.test.espresso.idling.CountingIdlingResource

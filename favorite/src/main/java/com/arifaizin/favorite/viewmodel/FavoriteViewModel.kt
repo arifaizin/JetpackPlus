@@ -1,4 +1,4 @@
-package com.arif.jetpackpro.viewmodel
+package com.arifaizin.favorite.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel

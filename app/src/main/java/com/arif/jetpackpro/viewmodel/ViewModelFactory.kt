@@ -3,10 +3,10 @@ package com.arif.jetpackpro.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.arifaizin.core.datasource.MovieRepository
+import com.arifaizin.core.di.scope.AppScope
 import javax.inject.Inject
-import javax.inject.Singleton
 
-@Singleton
+@AppScope
 //TODO 1: Add @Inject - Dagger tau bagaimana ViewModelFactoey dibuat, namun masih belum tau bagaimana MovieRepository dibuat
 class ViewModelFactory @Inject constructor(private val movieRepository: MovieRepository) :
     ViewModelProvider.NewInstanceFactory() {
@@ -16,7 +16,7 @@ class ViewModelFactory @Inject constructor(private val movieRepository: MovieRep
         return when {
             modelClass.isAssignableFrom(MovieViewModel::class.java) -> MovieViewModel(movieRepository) as T
             modelClass.isAssignableFrom(DetailMovieViewModel::class.java) -> DetailMovieViewModel(movieRepository) as T
-            modelClass.isAssignableFrom(FavoriteViewModel::class.java) -> FavoriteViewModel(movieRepository) as T
+//            modelClass.isAssignableFrom(com.arifaizin.favorite.viewmodel.FavoriteViewModel::class.java) -> com.arifaizin.favorite.viewmodel.FavoriteViewModel( movieRepository ) as T
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }
     }

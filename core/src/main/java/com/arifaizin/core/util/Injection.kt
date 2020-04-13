@@ -1,4 +1,4 @@
-package com.arif.jetpackpro.util
+package com.arifaizin.core.util
 
 
 class Injection {

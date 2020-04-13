@@ -1,4 +1,4 @@
-package com.arif.jetpackpro.di
+package com.arifaizin.favorite.dagger
 
 import android.content.Context
 import androidx.room.Room

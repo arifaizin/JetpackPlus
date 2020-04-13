@@ -16,9 +16,9 @@ import cn.pedant.SweetAlert.SweetAlertDialog
 import com.arif.jetpackpro.MyApplication
 import com.arif.jetpackpro.R
 import com.arif.jetpackpro.activity.DetailActivity
-import com.arif.jetpackpro.adapter.ListMoviePagedAdapter
-import com.arif.jetpackpro.adapter.ListTvShowPagedAdapter
-import com.arif.jetpackpro.util.ItemClickSupport
+import com.arifaizin.core.adapter.ListMoviePagedAdapter
+import com.arifaizin.core.adapter.ListTvShowPagedAdapter
+import com.arifaizin.core.util.ItemClickSupport
 import com.arif.jetpackpro.viewmodel.MovieViewModel
 import com.arif.jetpackpro.viewmodel.ViewModelFactory
 import com.arifaizin.core.model.movie.MovieModel

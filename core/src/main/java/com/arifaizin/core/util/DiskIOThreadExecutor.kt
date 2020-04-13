@@ -1,4 +1,4 @@
-package com.arif.jetpackpro.util
+package com.arifaizin.core.util
 
 import java.util.concurrent.Executor
 import java.util.concurrent.Executors

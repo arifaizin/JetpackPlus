@@ -2,7 +2,7 @@ package com.arif.jetpackpro.datasource
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.paging.DataSource
-import com.arif.jetpackpro.util.FakeDataDummy
+import com.arifaizin.core.util.FakeDataDummy
 import com.arif.jetpackpro.utils.InstantAppExecutors
 import com.arif.jetpackpro.utils.PagedListUtil
 import com.arifaizin.core.datasource.local.LocalRepository

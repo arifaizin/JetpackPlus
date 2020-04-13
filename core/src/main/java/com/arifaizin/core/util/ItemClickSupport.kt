@@ -1,4 +1,4 @@
-package com.arif.jetpackpro.util
+package com.arifaizin.core.util
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView

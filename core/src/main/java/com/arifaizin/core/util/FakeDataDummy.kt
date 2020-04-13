@@ -1,4 +1,4 @@
-package com.arif.jetpackpro.util
+package com.arifaizin.core.util
 
 import com.arifaizin.core.model.movie.MovieModel
 import com.arifaizin.core.model.tvshow.TvShowModel

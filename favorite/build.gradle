@@ -21,9 +21,8 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation project(":app")
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    //ui
-    implementation "com.google.android.material:material:$material_version"
-    implementation "com.airbnb.android:lottie:$lottie_version"
+
+    kapt "com.google.dagger:dagger-compiler:${dagger_version}"
 }
 repositories {
     mavenCentral()

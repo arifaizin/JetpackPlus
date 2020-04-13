@@ -5,11 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProviders
-import com.arif.jetpackpro.BuildConfig
 import com.arif.jetpackpro.MyApplication
 import com.arif.jetpackpro.R
 import com.arif.jetpackpro.viewmodel.DetailMovieViewModel
 import com.arif.jetpackpro.viewmodel.ViewModelFactory
+import com.arifaizin.core.BuildConfig
 import com.arifaizin.core.model.movie.MovieModel
 import com.arifaizin.core.model.tvshow.TvShowModel
 import com.bumptech.glide.Glide

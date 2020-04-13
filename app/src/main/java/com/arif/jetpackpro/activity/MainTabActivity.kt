@@ -13,7 +13,6 @@ import com.arif.jetpackpro.adapter.SectionsPagerAdapter
 import com.google.android.play.core.splitinstall.SplitInstallManagerFactory
 import com.google.android.play.core.splitinstall.SplitInstallRequest
 import kotlinx.android.synthetic.main.activity_main_tab.*
-import org.jetbrains.anko.startActivity
 
 
 class MainTabActivity : AppCompatActivity() {
@@ -28,7 +27,11 @@ class MainTabActivity : AppCompatActivity() {
     }
 
     private fun setupViewPager() {
-        val sectionsPagerAdapter = SectionsPagerAdapter(this, supportFragmentManager)
+        val sectionsPagerAdapter =
+            SectionsPagerAdapter(
+                this,
+                supportFragmentManager
+            )
         view_pager.adapter = sectionsPagerAdapter
         tabs.setupWithViewPager(view_pager)
     }
@@ -43,8 +46,8 @@ class MainTabActivity : AppCompatActivity() {
             val mIntent = Intent(Settings.ACTION_LOCALE_SETTINGS)
             startActivity(mIntent)
         } else if (item.itemId == R.id.action_favorite) {
-            startActivity<FavoriteActivity>()
-//            installFavoriteModule()
+//            startActivity<FavoriteActivity>()
+            installFavoriteModule()
         }
         return super.onOptionsItemSelected(item)
     }

@@ -5,7 +5,6 @@ import androidx.test.filters.LargeTest
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.rule.ActivityTestRule
-import com.arif.jetpackpro.activity.FavoriteActivity
 import com.arifaizin.core.model.movie.MovieModel
 import com.arifaizin.core.room.MovieDao
 import com.arifaizin.core.room.MovieDatabase

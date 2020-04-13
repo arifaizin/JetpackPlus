@@ -20,6 +20,7 @@ android {
 
         buildConfigField "String", "BASE_URL", "\"https://api.themoviedb.org/3/\""
         buildConfigField "String", "API_KEY", "\"b08e3495841838f530552c2b261e00b1\""
+        buildConfigField "String", "POSTER_URL", "\"https://image.tmdb.org/t/p/w500/\""
     }
 
     buildTypes {
@@ -61,6 +62,4 @@ dependencies {
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
     kaptAndroidTest "com.google.dagger:dagger-compiler:$dagger_version"
 
-    //repository
-    implementation "androidx.paging:paging-runtime:$paging_version"
 }

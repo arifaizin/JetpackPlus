@@ -14,6 +14,16 @@ open class MyApplication : Application() {
         DaggerAppComponent.factory().create(applicationContext)
     }
 
+//    private val coreComponent: CoreComponent by lazy {
+//        DaggerCoreComponent.factory().create(applicationContext)
+//    }
+//
+//    companion object {
+//        @JvmStatic
+//        fun coreComponent(context: Context) =
+//            (context.applicationContext as MyApplication).coreComponent
+//    }
+
     override fun attachBaseContext(base: Context) {
         super.attachBaseContext(base)
         SplitCompat.install(this)

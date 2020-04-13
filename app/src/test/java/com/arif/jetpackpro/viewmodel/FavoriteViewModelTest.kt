@@ -16,7 +16,7 @@ import org.mockito.Mockito.*
 
 class FavoriteViewModelTest {
 
-    private var viewModel: FavoriteViewModel? = null
+    private var viewModel: com.arifaizin.favorite.viewmodel.FavoriteViewModel? = null
     private val movieRepository = mock(MovieRepository::class.java)
 
     @Rule
@@ -25,7 +25,8 @@ class FavoriteViewModelTest {
 
     @Before
     fun setUp() {
-        viewModel = FavoriteViewModel(movieRepository)
+        viewModel =
+            com.arifaizin.favorite.viewmodel.FavoriteViewModel(movieRepository)
     }
     @Test
     fun getDataMovie() {

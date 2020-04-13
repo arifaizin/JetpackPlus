@@ -4,11 +4,10 @@ import androidx.paging.DataSource
 import com.arifaizin.core.model.movie.MovieModel
 import com.arifaizin.core.model.tvshow.TvShowModel
 import com.arifaizin.core.room.MovieDao
-
+import com.arifaizin.core.di.scope.AppScope
 import javax.inject.Inject
-import javax.inject.Singleton
 
-@Singleton
+@AppScope
 class LocalRepository @Inject constructor(private val mMovieDao: MovieDao) {
 
     fun getAllMoviesAsPaged(): DataSource.Factory<Int, MovieModel> = mMovieDao.getMovies()
