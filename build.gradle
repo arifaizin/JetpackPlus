@@ -32,16 +32,20 @@ buildscript {
     ext.roboelectric_version = "4.3.1"
     ext.play_core_version = "1.7.2"
     ext.core_ktx_version = "1.2.0"
+    ext.quadrant_version = "1.0.0"
 
 
     repositories {
         google()
         jcenter()
-        
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.4.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "gradle.plugin.com.gaelmarhic:quadrant:1.0"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }

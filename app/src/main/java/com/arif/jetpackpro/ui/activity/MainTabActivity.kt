@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.arif.jetpackpro.BuildConfig
 import com.arif.jetpackpro.R
 import com.arif.jetpackpro.ui.adapter.SectionsPagerAdapter
+import com.gaelmarhic.quadrant.QuadrantConstants
 import com.google.android.play.core.splitinstall.SplitInstallManagerFactory
 import com.google.android.play.core.splitinstall.SplitInstallRequest
 import kotlinx.android.synthetic.main.activity_main_tab.*
@@ -68,7 +69,7 @@ class MainTabActivity : AppCompatActivity() {
 
         if (splitInstallManager.installedModules.contains("favorite")) {
             val i = Intent()
-            i.setClassName(BuildConfig.APPLICATION_ID, "com.arifaizin.favorite.ui.MainFavoriteActivity")
+            i.setClassName(BuildConfig.APPLICATION_ID, QuadrantConstants.MAIN_FAVORITE_ACTIVITY)
             i.putExtra("ExtraInt", 3) // Test intent for Dynamic feature
             startActivity(i)
         } else {
