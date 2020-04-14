@@ -8,9 +8,9 @@ import com.arifaizin.core.data.datasource.remote.ApiResponse
 import com.arifaizin.core.data.datasource.remote.RemoteRepository
 import com.arifaizin.core.data.model.movie.MovieModel
 import com.arifaizin.core.data.model.tvshow.TvShowModel
+import com.arifaizin.core.di.scope.AppScope
 import com.arifaizin.core.util.AppExecutors
 import com.arifaizin.core.valueobject.Resource
-import com.arifaizin.core.di.scope.AppScope
 import javax.inject.Inject
 
 @AppScope

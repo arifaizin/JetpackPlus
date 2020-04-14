@@ -2,6 +2,8 @@ package com.arifaizin.core.di
 
 import android.content.Context
 import com.arif.jetpackpro.di.DatabaseModule
+import com.arifaizin.core.data.room.MovieDao
+import com.arifaizin.core.data.room.MovieDatabase
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
@@ -17,11 +19,7 @@ interface CoreComponent {
         fun create(@BindsInstance context: Context): CoreComponent
     }
 
-//    @Component.Builder interface Builder {
-//        fun database(database: MovieDatabase): CoreComponent.Builder
-//        fun build(): CoreComponent
-//    }
-//
-//    fun provideDatabase(): MovieDatabase
-//    fun provideMovieDao(): MovieDao
+    //harus ada ini untuk provide ke component yg depend kesini
+    fun provideDatabase(): MovieDatabase
+    fun provideMovieDao(): MovieDao
 }

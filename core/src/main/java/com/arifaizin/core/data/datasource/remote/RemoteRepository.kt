@@ -2,11 +2,11 @@ package com.arifaizin.core.data.datasource.remote
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.arifaizin.core.util.EspressoIdlingResource
-import com.arifaizin.core.di.scope.AppScope
 import com.arifaizin.core.data.model.movie.MovieModel
 import com.arifaizin.core.data.model.tvshow.TvShowModel
 import com.arifaizin.core.data.retrofit.ApiConfig
+import com.arifaizin.core.di.scope.AppScope
+import com.arifaizin.core.util.EspressoIdlingResource
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import javax.inject.Inject
