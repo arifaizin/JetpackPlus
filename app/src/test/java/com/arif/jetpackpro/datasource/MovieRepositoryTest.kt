@@ -5,10 +5,10 @@ import androidx.paging.DataSource
 import com.arifaizin.core.util.FakeDataDummy
 import com.arif.jetpackpro.utils.InstantAppExecutors
 import com.arif.jetpackpro.utils.PagedListUtil
-import com.arifaizin.core.datasource.local.LocalRepository
-import com.arifaizin.core.datasource.remote.RemoteRepository
-import com.arifaizin.core.model.movie.MovieModel
-import com.arifaizin.core.model.tvshow.TvShowModel
+import com.arifaizin.core.data.datasource.local.LocalRepository
+import com.arifaizin.core.data.datasource.remote.RemoteRepository
+import com.arifaizin.core.data.model.movie.MovieModel
+import com.arifaizin.core.data.model.tvshow.TvShowModel
 import com.arifaizin.core.valueobject.Resource
 import com.nhaarman.mockitokotlin2.verify
 import org.junit.Assert.assertEquals

@@ -1,24 +1,42 @@
-package com.arif.jetpackpro.datasource
+package com.arifaizin.core.data.datasource
 
 import androidx.lifecycle.LiveData
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
-import com.arifaizin.core.data.datasource.MovieDataSource
-import com.arifaizin.core.data.datasource.NetworkBoundResource
+import com.arifaizin.core.data.datasource.local.LocalRepository
+import com.arifaizin.core.data.datasource.remote.ApiResponse
 import com.arifaizin.core.data.datasource.remote.RemoteRepository
 import com.arifaizin.core.data.model.movie.MovieModel
 import com.arifaizin.core.data.model.tvshow.TvShowModel
-import com.arifaizin.core.data.datasource.local.LocalRepository
 import com.arifaizin.core.util.AppExecutors
 import com.arifaizin.core.valueobject.Resource
-import com.arifaizin.core.data.datasource.remote.ApiResponse
+import com.arifaizin.core.di.scope.AppScope
+import javax.inject.Inject
 
-
-class FakeMovieRepository(
+@AppScope
+class MovieRepository @Inject constructor(
     private var localRepository: LocalRepository,
     private var remoteRepository: RemoteRepository,
     private var appExecutors: AppExecutors
 ): MovieDataSource {
+    companion object {
+        @Volatile
+        private var INSTANCE: MovieRepository? = null
+
+//        fun getInstance(
+//            localRepository: LocalRepository,
+//            remoteData: RemoteRepository,
+//            appExecutors: AppExecutors
+//        ): MovieRepository {
+//            if (INSTANCE == null) {
+//                synchronized(MovieRepository::class.java) {
+//                    INSTANCE = MovieRepository(localRepository, remoteData, appExecutors)
+//                }
+//            }
+//            return INSTANCE as MovieRepository
+//        }
+    }
+
     override fun getAllMovies(page: Int): LiveData<Resource<PagedList<MovieModel>>> {
         return object : NetworkBoundResource<PagedList<MovieModel>, List<MovieModel>>(appExecutors) {
             public override fun loadFromDB(): LiveData<PagedList<MovieModel>> =

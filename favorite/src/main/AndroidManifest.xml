@@ -12,7 +12,7 @@
     </dist:module>
 
     <application>
-        <activity android:name=".MainFavoriteActivity" />
+        <activity android:name=".ui.MainFavoriteActivity" />
     </application>
 </manifest>
 

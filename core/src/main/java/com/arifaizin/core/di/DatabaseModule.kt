@@ -2,8 +2,8 @@ package com.arif.jetpackpro.di
 
 import android.content.Context
 import androidx.room.Room
-import com.arifaizin.core.room.MovieDao
-import com.arifaizin.core.room.MovieDatabase
+import com.arifaizin.core.data.room.MovieDao
+import com.arifaizin.core.data.room.MovieDatabase
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton

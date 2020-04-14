@@ -2,7 +2,7 @@ package com.arifaizin.favorite.dagger
 
 import android.content.Context
 import com.arifaizin.core.di.scope.AppScope
-import com.arifaizin.favorite.fragment.FavoriteFragment
+import com.arifaizin.favorite.ui.FavoriteFragment
 import dagger.BindsInstance
 import dagger.Component
 

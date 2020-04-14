@@ -2,7 +2,7 @@ package com.arifaizin.favorite.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.arifaizin.core.datasource.MovieRepository
+import com.arifaizin.core.data.datasource.MovieRepository
 import com.arifaizin.core.di.scope.AppScope
 import javax.inject.Inject
 

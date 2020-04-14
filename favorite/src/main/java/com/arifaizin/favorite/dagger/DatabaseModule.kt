@@ -2,9 +2,9 @@ package com.arifaizin.favorite.dagger
 
 import android.content.Context
 import androidx.room.Room
+import com.arifaizin.core.data.room.MovieDao
+import com.arifaizin.core.data.room.MovieDatabase
 import com.arifaizin.core.di.scope.AppScope
-import com.arifaizin.core.room.MovieDao
-import com.arifaizin.core.room.MovieDatabase
 import dagger.Module
 import dagger.Provides
 

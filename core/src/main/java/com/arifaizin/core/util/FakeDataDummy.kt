@@ -1,7 +1,7 @@
 package com.arifaizin.core.util
 
-import com.arifaizin.core.model.movie.MovieModel
-import com.arifaizin.core.model.tvshow.TvShowModel
+import com.arifaizin.core.data.model.movie.MovieModel
+import com.arifaizin.core.data.model.tvshow.TvShowModel
 
 class FakeDataDummy {
     companion object {

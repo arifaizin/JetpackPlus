@@ -1,8 +1,8 @@
 package com.arif.jetpackpro.di
 
 import android.content.Context
-import com.arif.jetpackpro.activity.DetailActivity
-import com.arif.jetpackpro.fragment.ListMovieFragment
+import com.arif.jetpackpro.ui.activity.DetailActivity
+import com.arif.jetpackpro.ui.fragment.ListMovieFragment
 import com.arifaizin.core.di.scope.AppScope
 import dagger.BindsInstance
 import dagger.Component
