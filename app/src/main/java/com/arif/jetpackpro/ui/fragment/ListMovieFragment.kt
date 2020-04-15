@@ -16,15 +16,15 @@ import cn.pedant.SweetAlert.SweetAlertDialog
 import com.arif.jetpackpro.MyApplication
 import com.arif.jetpackpro.R
 import com.arif.jetpackpro.ui.activity.DetailActivity
-import com.arifaizin.core.ui.adapter.ListMoviePagedAdapter
-import com.arifaizin.core.ui.adapter.ListTvShowPagedAdapter
-import com.arifaizin.core.util.ItemClickSupport
 import com.arif.jetpackpro.viewmodel.MovieViewModel
 import com.arif.jetpackpro.viewmodel.ViewModelFactory
 import com.arifaizin.core.data.model.movie.MovieModel
 import com.arifaizin.core.data.model.tvshow.TvShowModel
+import com.arifaizin.core.ui.adapter.ListMoviePagedAdapter
+import com.arifaizin.core.ui.adapter.ListTvShowPagedAdapter
+import com.arifaizin.core.util.ItemClickSupport
 import com.arifaizin.core.valueobject.Status
-import kotlinx.android.synthetic.main.fragment_main_tab.*
+import kotlinx.android.synthetic.main.fragment_main.*
 import org.jetbrains.anko.startActivity
 import javax.inject.Inject
 
@@ -39,7 +39,7 @@ class ListMovieFragment : androidx.fragment.app.Fragment() {
     private lateinit var progressDialog: SweetAlertDialog
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
-        inflater.inflate(R.layout.fragment_main_tab, container, false)
+        inflater.inflate(R.layout.fragment_main, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

@@ -18,4 +18,8 @@ dependencies {
     implementation "org.jetbrains.anko:anko-commons:$anko_version"
 
     implementation "androidx.room:room-runtime:$room_version"
+
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 }
