@@ -13,7 +13,7 @@
     </dist:module>
 
     <application>
-        <activity android:name="com.arifaizin.jetpackpro.favorite.MainFavoriteActivity" />
+        <activity android:name="com.arifaizin.jetpackpro.favorite.ui.MainFavoriteActivity" />
     </application>
 </manifest>
 

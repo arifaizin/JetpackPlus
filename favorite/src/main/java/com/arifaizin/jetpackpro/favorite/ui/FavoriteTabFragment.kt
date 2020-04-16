@@ -1,4 +1,4 @@
-package com.arifaizin.jetpackpro.favorite
+package com.arifaizin.jetpackpro.favorite.ui
 
 
 import android.content.Context
@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import com.arifaizin.jetpackpro.favorite.ui.FavoriteFragment
+import com.arifaizin.jetpackpro.favorite.R
 import kotlinx.android.synthetic.main.fragment_favorite_tab.*
 
 class FavoriteTabFragment : Fragment() {

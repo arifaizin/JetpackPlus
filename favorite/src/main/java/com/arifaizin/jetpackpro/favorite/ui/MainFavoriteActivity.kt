@@ -1,7 +1,8 @@
-package com.arifaizin.jetpackpro.favorite
+package com.arifaizin.jetpackpro.favorite.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.arifaizin.jetpackpro.favorite.R
 
 
 class MainFavoriteActivity : AppCompatActivity() {

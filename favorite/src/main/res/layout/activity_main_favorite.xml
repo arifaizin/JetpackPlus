@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainFavoriteActivity">
+    tools:context=".ui.MainFavoriteActivity">
 
     <fragment
         android:id="@+id/nav_host_fragment"
-        android:name="com.arifaizin.jetpackpro.favorite.FavoriteTabFragment"
+        android:name="com.arifaizin.jetpackpro.favorite.ui.FavoriteTabFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:defaultNavHost="true"

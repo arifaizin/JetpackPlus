@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/favoriteTabFragment"
-        android:name="com.arifaizin.jetpackpro.favorite.FavoriteTabFragment"
+        android:name="com.arifaizin.jetpackpro.favorite.ui.FavoriteTabFragment"
         android:label="FavoriteTabFragment"
         tools:layout="@layout/fragment_favorite_tab"/>
 </navigation>
