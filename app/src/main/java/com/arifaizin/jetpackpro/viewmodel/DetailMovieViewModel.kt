@@ -1,4 +1,4 @@
-package com.arif.jetpackpro.viewmodel
+package com.arifaizin.jetpackpro.viewmodel
 
 import androidx.lifecycle.ViewModel
 import com.arifaizin.core.data.datasource.MovieRepository

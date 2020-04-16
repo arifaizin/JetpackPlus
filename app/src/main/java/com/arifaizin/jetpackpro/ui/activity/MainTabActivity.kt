@@ -1,8 +1,8 @@
-package com.arif.jetpackpro.ui.activity
+package com.arifaizin.jetpackpro.ui.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.arif.jetpackpro.R
+import com.arifaizin.jetpackpro.R
 
 
 class MainTabActivity : AppCompatActivity() {

@@ -1,11 +1,12 @@
-package com.arif.jetpackpro.ui.fragment
+package com.arifaizin.jetpackpro.favorite.ui
+
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -13,33 +14,31 @@ import androidx.paging.PagedList
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import cn.pedant.SweetAlert.SweetAlertDialog
-import com.arif.jetpackpro.MyApplication
-import com.arif.jetpackpro.R
-import com.arif.jetpackpro.ui.activity.DetailActivity
-import com.arif.jetpackpro.viewmodel.MovieViewModel
-import com.arif.jetpackpro.viewmodel.ViewModelFactory
+import com.arifaizin.jetpackpro.ui.activity.DetailActivity
 import com.arifaizin.core.data.model.movie.MovieModel
 import com.arifaizin.core.data.model.tvshow.TvShowModel
 import com.arifaizin.core.ui.adapter.ListMoviePagedAdapter
 import com.arifaizin.core.ui.adapter.ListTvShowPagedAdapter
 import com.arifaizin.core.util.ItemClickSupport
+import com.arifaizin.core.util.gone
+import com.arifaizin.core.util.visible
 import com.arifaizin.core.valueobject.Status
-import kotlinx.android.synthetic.main.fragment_main.*
+import com.arifaizin.jetpackpro.favorite.R
+import com.arifaizin.jetpackpro.favorite.dagger.inject
+import com.arifaizin.jetpackpro.favorite.viewmodel.FavoriteViewModel
+import com.arifaizin.jetpackpro.favorite.viewmodel.FavoriteViewModelFactory
+import kotlinx.android.synthetic.main.fragment_favorite.*
 import org.jetbrains.anko.startActivity
 import javax.inject.Inject
 
-
-
-class ListMovieFragment : androidx.fragment.app.Fragment() {
-
-    private var page = 1
-    private var index: Int? = 1
-    private lateinit var movieViewModel: MovieViewModel
-
+class FavoriteFragment : Fragment() {
     private lateinit var progressDialog: SweetAlertDialog
+    private var index: Int? = 0
+    private lateinit var movieViewModel: FavoriteViewModel
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
-        inflater.inflate(R.layout.fragment_main, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        return inflater.inflate(R.layout.fragment_favorite, container, false)
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -58,9 +57,7 @@ class ListMovieFragment : androidx.fragment.app.Fragment() {
         if (index == 1) {
             val adapter = ListMoviePagedAdapter()
             recycleMovie.adapter = adapter
-            recycleMovie.hasFixedSize()
-            movieViewModel.getDataMovie(page).observe(this, Observer { movie ->
-                Log.d("tes", ""+movie.status+hashCode())
+            movieViewModel.getDataMovie().observe(this, Observer { movie ->
                 if (movie != null) {
                     when (movie.status) {
                         Status.LOADING -> progressDialog.show()
@@ -70,16 +67,14 @@ class ListMovieFragment : androidx.fragment.app.Fragment() {
                         }
                         Status.ERROR -> {
                             progressDialog.dismissWithAnimation()
+                            showErrorDialog()
                         }
                     }
                 }
             })
-
-            
         } else {
             val adapter = ListTvShowPagedAdapter()
             recycleMovie.adapter = adapter
-            recycleMovie.hasFixedSize()
             movieViewModel.getDataTvShow().observe(this, Observer { movie ->
                 if (movie != null) {
                     when (movie.status) {
@@ -107,41 +102,53 @@ class ListMovieFragment : androidx.fragment.app.Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        (context.applicationContext as MyApplication).appComponent.inject(this)
+//        FavoriteApplication.inject(this)
+        inject(this)
     }
-    @Inject
-    lateinit var factory: ViewModelFactory
 
-    private fun obtainViewModel(activity: FragmentActivity): MovieViewModel {
+    @Inject
+    lateinit var factory: FavoriteViewModelFactory
+
+    private fun obtainViewModel(activity: FragmentActivity): FavoriteViewModel {
         // Use a Factory to inject dependencies into the ViewModel
 //        val factory = ViewModelFactory.getInstance(activity.application)
-        return ViewModelProviders.of(activity, factory).get(MovieViewModel::class.java)
+        return ViewModelProviders.of(activity, factory).get(FavoriteViewModel::class.java)
     }
 
     private fun showMovieList(
         listMovie: PagedList<MovieModel>,
         adapter: ListMoviePagedAdapter
     ) {
-        adapter.submitList(listMovie)
-        adapter.notifyDataSetChanged()
-        ItemClickSupport.addTo(recycleMovie).setOnItemClickListener(object : ItemClickSupport.OnItemClickListener {
-            override fun onItemClicked(recyclerView: RecyclerView, position: Int, v: View) {
-                context?.startActivity<DetailActivity>("data" to listMovie[position], "index" to index)
-            }
-        })
+        if (listMovie.size > 0) {
+            recycleMovie.visible()
+            adapter.submitList(listMovie)
+            adapter.notifyDataSetChanged()
+            ItemClickSupport.addTo(recycleMovie).setOnItemClickListener(object : ItemClickSupport.OnItemClickListener {
+                override fun onItemClicked(recyclerView: RecyclerView, position: Int, v: View) {
+                    context?.startActivity<DetailActivity>("data" to listMovie[position], "index" to index)
+                }
+            })
+        } else {
+            recycleMovie.gone()
+        }
     }
 
     private fun showTvShowList(
         listTvShow: PagedList<TvShowModel>,
         adapter: ListTvShowPagedAdapter
     ) {
-        adapter.submitList(listTvShow)
-        adapter.notifyDataSetChanged()
-        ItemClickSupport.addTo(recycleMovie).setOnItemClickListener(object : ItemClickSupport.OnItemClickListener {
-            override fun onItemClicked(recyclerView: RecyclerView, position: Int, v: View) {
-                context?.startActivity<DetailActivity>("data" to listTvShow[position], "index" to index)
-            }
-        })
+        if (listTvShow.size > 0) {
+            recycleMovie.visible()
+            adapter.submitList(listTvShow)
+            adapter.notifyDataSetChanged()
+            ItemClickSupport.addTo(recycleMovie).setOnItemClickListener(object : ItemClickSupport.OnItemClickListener {
+                override fun onItemClicked(recyclerView: RecyclerView, position: Int, v: View) {
+                    context?.startActivity<DetailActivity>("data" to listTvShow[position], "index" to index)
+                }
+            })
+        } else {
+            recycleMovie.gone()
+        }
     }
 
     private fun createDialog() {
@@ -154,8 +161,8 @@ class ListMovieFragment : androidx.fragment.app.Fragment() {
         private const val ARG_SECTION_NUMBER = "section_number"
 
         @JvmStatic
-        fun newInstance(sectionNumber: Int): ListMovieFragment {
-            return ListMovieFragment().apply {
+        fun newInstance(sectionNumber: Int): FavoriteFragment {
+            return FavoriteFragment().apply {
                 arguments = Bundle().apply {
                     putInt(ARG_SECTION_NUMBER, sectionNumber)
                 }

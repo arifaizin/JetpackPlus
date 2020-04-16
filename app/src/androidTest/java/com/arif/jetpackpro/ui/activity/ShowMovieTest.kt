@@ -13,6 +13,7 @@ import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
 import androidx.test.rule.ActivityTestRule
 import com.arif.jetpackpro.R
 import com.arifaizin.core.util.EspressoIdlingResource
+import com.arifaizin.jetpackpro.ui.activity.MainTabActivity
 import org.hamcrest.Description
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers.allOf

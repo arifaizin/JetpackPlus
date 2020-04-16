@@ -3,6 +3,7 @@ package com.arif.jetpackpro.ui.activity
 
 import androidx.viewpager.widget.ViewPager
 import com.arif.jetpackpro.R
+import com.arifaizin.jetpackpro.ui.activity.MainTabActivity
 import org.hamcrest.Matchers.equalTo
 import org.junit.Assert.*
 import org.junit.Test

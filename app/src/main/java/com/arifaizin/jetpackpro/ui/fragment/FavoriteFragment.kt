@@ -1,4 +1,4 @@
-package com.arif.jetpackpro.ui.fragment
+package com.arifaizin.jetpackpro.ui.fragment
 
 
 //class FavoriteFragment : Fragment() {

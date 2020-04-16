@@ -1,14 +1,14 @@
-package com.arif.jetpackpro.ui.activity
+package com.arifaizin.jetpackpro.ui.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProviders
-import com.arif.jetpackpro.MyApplication
-import com.arif.jetpackpro.R
-import com.arif.jetpackpro.viewmodel.DetailMovieViewModel
-import com.arif.jetpackpro.viewmodel.ViewModelFactory
+import com.arifaizin.jetpackpro.MyApplication
+import com.arifaizin.jetpackpro.R
+import com.arifaizin.jetpackpro.viewmodel.DetailMovieViewModel
+import com.arifaizin.jetpackpro.viewmodel.ViewModelFactory
 import com.arifaizin.core.BuildConfig
 import com.arifaizin.core.data.model.movie.MovieModel
 import com.arifaizin.core.data.model.tvshow.TvShowModel

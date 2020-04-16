@@ -1,10 +1,10 @@
-package com.arif.jetpackpro.ui.adapter
+package com.arifaizin.jetpackpro.ui.adapter
 
 import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import com.arif.jetpackpro.R
-import com.arif.jetpackpro.ui.fragment.ListMovieFragment
+import com.arifaizin.jetpackpro.R
+import com.arifaizin.jetpackpro.ui.fragment.ListMovieFragment
 
 private val TAB_TITLES = arrayOf(
     R.string.tab_text_1,

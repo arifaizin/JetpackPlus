@@ -8,6 +8,7 @@ import com.arifaizin.core.data.datasource.MovieRepository
 import com.arifaizin.core.data.model.movie.MovieModel
 import com.arifaizin.core.data.model.tvshow.TvShowModel
 import com.arifaizin.core.valueobject.Resource
+import com.arifaizin.jetpackpro.viewmodel.MovieViewModel
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -26,7 +27,8 @@ class MovieViewModelTest {
 
     @Before
     fun setUp() {
-        viewModel = MovieViewModel(movieRepository)
+        viewModel =
+            MovieViewModel(movieRepository)
     }
     @Test
     fun getDataMovie() {

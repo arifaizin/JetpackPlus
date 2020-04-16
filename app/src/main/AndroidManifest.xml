@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.arif.jetpackpro">
+    package="com.arifaizin.jetpackpro">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name="com.arif.jetpackpro.MyApplication"
+        android:name="com.arifaizin.jetpackpro.MyApplication"
         android:allowBackup="true"
         android:fullBackupContent="@xml/backup_descriptor"
         android:icon="@mipmap/ic_launcher"
@@ -16,9 +16,9 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:icon">
-        <activity android:name="com.arif.jetpackpro.ui.activity.FavoriteActivity" />
+<!--        <activity android:name="com.arifaizin.jetpackpro.ui.activity.FavoriteActivity" />-->
         <activity
-            android:name="com.arif.jetpackpro.ui.activity.MainTabActivity"
+            android:name="com.arifaizin.jetpackpro.ui.activity.MainTabActivity"
             android:configChanges="screenSize|keyboard|orientation"
             android:label="@string/title_activity_main_tab"
             android:theme="@style/AppTheme.NoActionBar">
@@ -28,7 +28,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.arif.jetpackpro.ui.activity.DetailActivity" />
+        <activity android:name="com.arifaizin.jetpackpro.ui.activity.DetailActivity" />
     </application>
 
 </manifest>

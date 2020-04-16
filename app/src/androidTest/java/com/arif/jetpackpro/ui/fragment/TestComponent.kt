@@ -1,7 +1,7 @@
 package com.arif.jetpackpro.ui.fragment
 
 import android.content.Context
-import com.arif.jetpackpro.di.AppComponent
+import com.arifaizin.jetpackpro.di.AppComponent
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
