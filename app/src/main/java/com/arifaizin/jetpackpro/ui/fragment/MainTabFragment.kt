@@ -1,4 +1,4 @@
-package com.arif.jetpackpro.ui.fragment
+package com.arifaizin.jetpackpro.ui.fragment
 
 import android.content.Context
 import android.content.Intent
@@ -7,10 +7,11 @@ import android.provider.Settings
 import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
-import com.arif.jetpackpro.BuildConfig
-import com.arif.jetpackpro.R
-import com.arif.jetpackpro.ui.activity.MainTabActivity
-import com.arif.jetpackpro.ui.adapter.SectionsPagerAdapter
+import androidx.navigation.findNavController
+import com.arifaizin.jetpackpro.BuildConfig
+import com.arifaizin.jetpackpro.R
+import com.arifaizin.jetpackpro.ui.activity.MainTabActivity
+import com.arifaizin.jetpackpro.ui.adapter.SectionsPagerAdapter
 import com.gaelmarhic.quadrant.QuadrantConstants
 import com.google.android.play.core.splitinstall.SplitInstallManagerFactory
 import com.google.android.play.core.splitinstall.SplitInstallRequest
@@ -62,7 +63,10 @@ class MainTabFragment : Fragment() {
             startActivity(mIntent)
         } else if (item.itemId == R.id.action_favorite) {
 //            startActivity<FavoriteActivity>()
-            installFavoriteModule()
+//            installFavoriteModule()
+//            Navigation.createNavigateOnClickListener(R.id.action_mainTabFragment_to_favoriteNav)
+            view?.findNavController()?.navigate(R.id.action_mainTabFragment_to_favoriteNav)
+
         }
         return super.onOptionsItemSelected(item)
     }

@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:moduleName="favorite"
-    android:id="@+id/nav_favorite_fragment"
-    android:name="com.arifaizin.favorite.ui.FavoriteTabFragment"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:navGraph="@navigation/nav_favorite_graph" />
+    tools:context=".MainFavoriteActivity">
+
+    <fragment
+        android:id="@+id/nav_host_fragment"
+        android:name="com.arifaizin.jetpackpro.favorite.FavoriteTabFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/main_graph" />
+</RelativeLayout>

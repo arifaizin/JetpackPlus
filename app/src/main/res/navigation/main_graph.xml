@@ -3,22 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph.xml"
-    app:startDestination="@id/mainTabFragment">
+    app:startDestination="@id/mainTabFragment"
+    tools:ignore="UnusedNavigation">
 
     <fragment
         android:id="@+id/mainTabFragment"
-        android:name="com.arif.jetpackpro.ui.fragment.MainTabFragment"
+        android:name="com.arifaizin.jetpackpro.ui.fragment.MainTabFragment"
         android:label="fragment_main_tab"
-        tools:layout="@layout/fragment_main_tab" >
-<!--        <action-->
-<!--            android:id="@+id/action_mainTabFragment_to_favoriteNav"-->
-<!--            app:destination="@id/favoriteNav" />-->
+        tools:layout="@layout/fragment_main_tab">
+        <action
+            android:id="@+id/action_mainTabFragment_to_favoriteNav"
+            app:destination="@id/favoriteNav" />
     </fragment>
 
-<!--        <include-dynamic-->
-<!--            android:id="@+id/favoriteNav"-->
-<!--            app:moduleName="favorite"-->
-<!--            app:graphResName="favorite_feature_nav"-->
-<!--            app:graphPackage="com.arifaizin.favorite.ui.FavoriteFragment" />-->
+    <include-dynamic
+        android:id="@+id/favoriteNav"
+        app:moduleName="favorite"
+        app:graphResName="favorite_graph"
+        app:graphPackage="com.arifaizin.jetpackpro.favorite"
+         />
 
 </navigation>
