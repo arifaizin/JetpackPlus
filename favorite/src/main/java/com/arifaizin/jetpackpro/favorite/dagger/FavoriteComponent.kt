@@ -1,9 +1,9 @@
-package com.arifaizin.favorite.dagger
+package com.arifaizin.jetpackpro.favorite.dagger
 
 import android.content.Context
 import com.arifaizin.core.di.CoreComponent
 import com.arifaizin.core.di.scope.AppScope
-import com.arifaizin.favorite.ui.FavoriteFragment
+import com.arifaizin.jetpackpro.favorite.ui.FavoriteFragment
 import dagger.BindsInstance
 import dagger.Component
 

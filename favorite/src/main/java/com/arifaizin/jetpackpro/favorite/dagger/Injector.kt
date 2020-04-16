@@ -1,7 +1,7 @@
-package com.arifaizin.favorite.dagger
+package com.arifaizin.jetpackpro.favorite.dagger
 
 import com.arifaizin.jetpackpro.coreComponent
-import com.arifaizin.favorite.ui.FavoriteFragment
+import com.arifaizin.jetpackpro.favorite.ui.FavoriteFragment
 
 fun inject(fragment: FavoriteFragment) {
     DaggerFavoriteComponent.factory()
