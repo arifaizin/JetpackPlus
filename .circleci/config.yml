@@ -1,0 +1,21 @@
+version: 2.1
+
+orbs:
+ android: circleci/android@0.2.0
+
+jobs:
+  build:
+    executor: android/android
+        
+    steps:
+      - checkout
+      - run:
+          name: Run Tests
+          command: ./gradlew lint test
+      - run:
+          command: ./gradlew build
+      - run:
+          name: Build debug APK and release APK
+          command: |
+            ./gradlew :app:assembleDebug
+            ./gradlew :app:assembleDebugAndroidTest
