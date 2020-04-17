@@ -59,7 +59,7 @@ class ListMovieFragment : androidx.fragment.app.Fragment() {
             val adapter = ListMoviePagedAdapter()
             recycleMovie.adapter = adapter
             recycleMovie.hasFixedSize()
-            movieViewModel.getDataMovie(page).observe(this, Observer { movie ->
+            movieViewModel.getDataMovie(page).observe(viewLifecycleOwner, Observer { movie ->
                 Log.d("tes", ""+movie.status+hashCode())
                 if (movie != null) {
                     when (movie.status) {
@@ -80,7 +80,7 @@ class ListMovieFragment : androidx.fragment.app.Fragment() {
             val adapter = ListTvShowPagedAdapter()
             recycleMovie.adapter = adapter
             recycleMovie.hasFixedSize()
-            movieViewModel.getDataTvShow().observe(this, Observer { movie ->
+            movieViewModel.getDataTvShow().observe(viewLifecycleOwner, Observer { movie ->
                 if (movie != null) {
                     when (movie.status) {
                         Status.LOADING -> progressDialog.show()
