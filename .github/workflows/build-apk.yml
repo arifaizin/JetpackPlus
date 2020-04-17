@@ -9,6 +9,7 @@ on:
     branches: 
       - master
       - 'github-action'
+      - '*'
   pull_request:
     branches: [ master ]
 
