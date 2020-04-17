@@ -1,5 +1,4 @@
 # JetpackPlus
 Just Playground Project
 
-[![Build Status](http://localhost:8080/job/Jenkins%20Android%20Test/badge/icon)](http://localhost:8080/job/Jenkins%20Android%20Test/)
-
+[![CircleCI](https://circleci.com/gh/arifaizin/JetpackPlus/tree/circleci-project-setup.svg?style=svg)](https://circleci.com/gh/arifaizin/JetpackPlus/tree/circleci-project-setup)
