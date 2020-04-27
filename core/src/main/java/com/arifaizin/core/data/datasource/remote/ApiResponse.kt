@@ -18,10 +18,6 @@ class ApiResponse<T>(
             )
         }
 
-//        fun <T> empty(msg: String, @Nullable body: T): ApiResponse<T> {
-//            return ApiResponse(StatusResponse.EMPTY, body, msg)
-//        }
-
         fun <T> error(msg: String, @Nullable body: T): ApiResponse<T> {
             return ApiResponse(
                 StatusResponse.ERROR,

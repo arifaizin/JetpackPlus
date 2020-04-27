@@ -16,8 +16,7 @@ class FavoriteTabFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val inflate = inflater.inflate(R.layout.fragment_favorite_tab, container, false)
-        return inflate
+        return inflater.inflate(R.layout.fragment_favorite_tab, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -45,18 +44,13 @@ class FavoriteTabFragment : Fragment() {
             R.string.tab_text_2
         )
 
-        override fun getItem(position: Int): Fragment {
-            return FavoriteFragment.newInstance(
-                position + 1
-            )
-        }
+        override fun getItem(position: Int): Fragment = FavoriteFragment.newInstance(
+            position + 1
+        )
 
-        override fun getPageTitle(position: Int): CharSequence? {
-            return context.resources.getString(TAB_TITLES[position])
-        }
+        override fun getPageTitle(position: Int): CharSequence? =
+            context.resources.getString(TAB_TITLES[position])
 
-        override fun getCount(): Int {
-            return 2
-        }
+        override fun getCount(): Int = 2
     }
 }

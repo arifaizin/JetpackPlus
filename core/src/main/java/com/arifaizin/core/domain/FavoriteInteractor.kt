@@ -8,6 +8,7 @@ import com.arifaizin.core.data.model.tvshow.TvShowModel
 import com.arifaizin.core.valueobject.Resource
 import javax.inject.Inject
 
+//dipakai di module Favorite : FavoriteModule
 class FavoriteInteractor @Inject constructor(var movieRepository: MovieRepository) : FavoriteUseCase {
     override fun getFavoriteMovies(): LiveData<Resource<PagedList<MovieModel>>> {
         return movieRepository.getFavoriteMovies()

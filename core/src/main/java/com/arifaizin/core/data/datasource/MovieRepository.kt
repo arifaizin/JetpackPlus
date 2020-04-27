@@ -19,23 +19,6 @@ class MovieRepository @Inject constructor(
     private var remoteRepository: RemoteRepository,
     private var appExecutors: AppExecutors
 ): MovieDataSource {
-    companion object {
-        @Volatile
-        private var INSTANCE: MovieRepository? = null
-
-//        fun getInstance(
-//            localRepository: LocalRepository,
-//            remoteData: RemoteRepository,
-//            appExecutors: AppExecutors
-//        ): MovieRepository {
-//            if (INSTANCE == null) {
-//                synchronized(MovieRepository::class.java) {
-//                    INSTANCE = MovieRepository(localRepository, remoteData, appExecutors)
-//                }
-//            }
-//            return INSTANCE as MovieRepository
-//        }
-    }
 
     override fun getAllMovies(page: Int): LiveData<Resource<PagedList<MovieModel>>> {
         return object : NetworkBoundResource<PagedList<MovieModel>, List<MovieModel>>(appExecutors) {

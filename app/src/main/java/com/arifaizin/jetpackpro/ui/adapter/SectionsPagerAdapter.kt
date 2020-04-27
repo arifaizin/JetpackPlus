@@ -13,15 +13,10 @@ private val TAB_TITLES = arrayOf(
 
 class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) : androidx.fragment.app.FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
-    override fun getItem(position: Int): Fragment {
-        return ListMovieFragment.newInstance(position + 1)
-    }
+    override fun getItem(position: Int): Fragment = ListMovieFragment.newInstance(position + 1)
 
-    override fun getPageTitle(position: Int): CharSequence? {
-        return context.resources.getString(TAB_TITLES[position])
-    }
+    override fun getPageTitle(position: Int): CharSequence? =
+        context.resources.getString(TAB_TITLES[position])
 
-    override fun getCount(): Int {
-        return 2
-    }
+    override fun getCount(): Int = 2
 }

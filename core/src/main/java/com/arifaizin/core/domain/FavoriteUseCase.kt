@@ -6,6 +6,7 @@ import com.arifaizin.core.data.model.movie.MovieModel
 import com.arifaizin.core.data.model.tvshow.TvShowModel
 import com.arifaizin.core.valueobject.Resource
 
+//dipakai di module Favorite : FavoriteViewModelFactory
 interface FavoriteUseCase {
     fun getFavoriteMovies(): LiveData<Resource<PagedList<MovieModel>>>
     fun getFavoriteTvShow(): LiveData<Resource<PagedList<TvShowModel>>>

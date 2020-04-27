@@ -13,17 +13,17 @@ import androidx.paging.PagedList
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import cn.pedant.SweetAlert.SweetAlertDialog
-import com.arifaizin.jetpackpro.MyApplication
-import com.arifaizin.jetpackpro.R
-import com.arifaizin.jetpackpro.ui.activity.DetailActivity
-import com.arifaizin.jetpackpro.viewmodel.MovieViewModel
-import com.arifaizin.jetpackpro.viewmodel.ViewModelFactory
 import com.arifaizin.core.data.model.movie.MovieModel
 import com.arifaizin.core.data.model.tvshow.TvShowModel
 import com.arifaizin.core.ui.adapter.ListMoviePagedAdapter
 import com.arifaizin.core.ui.adapter.ListTvShowPagedAdapter
 import com.arifaizin.core.util.ItemClickSupport
 import com.arifaizin.core.valueobject.Status
+import com.arifaizin.jetpackpro.MyApplication
+import com.arifaizin.jetpackpro.R
+import com.arifaizin.jetpackpro.ui.activity.DetailActivity
+import com.arifaizin.jetpackpro.viewmodel.MovieViewModel
+import com.arifaizin.jetpackpro.viewmodel.ViewModelFactory
 import kotlinx.android.synthetic.main.fragment_main.*
 import org.jetbrains.anko.startActivity
 import javax.inject.Inject
@@ -113,8 +113,6 @@ class ListMovieFragment : androidx.fragment.app.Fragment() {
     lateinit var factory: ViewModelFactory
 
     private fun obtainViewModel(activity: FragmentActivity): MovieViewModel {
-        // Use a Factory to inject dependencies into the ViewModel
-//        val factory = ViewModelFactory.getInstance(activity.application)
         return ViewModelProviders.of(activity, factory).get(MovieViewModel::class.java)
     }
 

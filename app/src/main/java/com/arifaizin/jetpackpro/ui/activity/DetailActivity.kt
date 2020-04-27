@@ -5,13 +5,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProviders
+import com.arifaizin.core.BuildConfig
+import com.arifaizin.core.data.model.movie.MovieModel
+import com.arifaizin.core.data.model.tvshow.TvShowModel
 import com.arifaizin.jetpackpro.MyApplication
 import com.arifaizin.jetpackpro.R
 import com.arifaizin.jetpackpro.viewmodel.DetailMovieViewModel
 import com.arifaizin.jetpackpro.viewmodel.ViewModelFactory
-import com.arifaizin.core.BuildConfig
-import com.arifaizin.core.data.model.movie.MovieModel
-import com.arifaizin.core.data.model.tvshow.TvShowModel
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_detail.*
 import javax.inject.Inject
@@ -86,8 +86,6 @@ class DetailActivity : AppCompatActivity() {
     @Inject
     lateinit var factory: ViewModelFactory
     private fun obtainViewModel(activity: FragmentActivity): DetailMovieViewModel {
-        // Use a Factory to inject dependencies into the ViewModel
-//        val factory = ViewModelFactory.getInstance(activity.application)
         return ViewModelProviders.of(activity, factory).get(DetailMovieViewModel::class.java)
     }
 }

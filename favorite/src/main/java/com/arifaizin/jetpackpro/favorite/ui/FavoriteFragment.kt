@@ -102,7 +102,6 @@ class FavoriteFragment : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-//        FavoriteApplication.inject(this)
         inject(this)
     }
 
@@ -110,8 +109,6 @@ class FavoriteFragment : Fragment() {
     lateinit var factory: FavoriteViewModelFactory
 
     private fun obtainViewModel(activity: FragmentActivity): FavoriteViewModel {
-        // Use a Factory to inject dependencies into the ViewModel
-//        val factory = ViewModelFactory.getInstance(activity.application)
         return ViewModelProviders.of(activity, factory).get(FavoriteViewModel::class.java)
     }
 

@@ -13,16 +13,6 @@ import javax.inject.Inject
 
 @AppScope
 class RemoteRepository @Inject constructor() {
-//    companion object {
-//        private var INSTANCE: RemoteRepository? = null
-//
-//        fun getInstance(): RemoteRepository {
-//            if (INSTANCE == null) {
-//                INSTANCE = RemoteRepository()
-//            }
-//            return INSTANCE as RemoteRepository
-//        }
-//    }
 
     fun getAllMoviesAsLiveData(page: Int): LiveData<ApiResponse<List<MovieModel>>>{
         EspressoIdlingResource.increment()

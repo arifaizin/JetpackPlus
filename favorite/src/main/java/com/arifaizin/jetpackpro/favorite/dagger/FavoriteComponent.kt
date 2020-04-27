@@ -29,11 +29,6 @@ interface FavoriteComponent {
     fun inject(fragment: FavoriteFragment)
 }
 
-@Module
-class FavoriteModule(){
-    @AppScope
-    @Provides
-    fun provideUseCase(repository: MovieRepository): FavoriteUseCase = FavoriteInteractor(repository)
-}
+
 
 

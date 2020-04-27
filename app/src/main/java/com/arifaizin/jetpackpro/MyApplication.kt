@@ -12,9 +12,8 @@ import com.google.android.play.core.splitcompat.SplitCompat
 open class MyApplication : Application() {
 
     val appComponent: AppComponent by lazy {
-        // Creates an instance of AppComponent using its Factory constructor
-        // We pass the applicationContext that will be used as Context in the graph
-        DaggerAppComponent.factory().create(applicationContext,
+        DaggerAppComponent.factory().create(
+            applicationContext,
             coreComponent(this)
         )
     }
@@ -25,8 +24,7 @@ open class MyApplication : Application() {
 
     companion object {
         @JvmStatic
-        fun coreComponent(context: Context) =
-            (context.applicationContext as MyApplication).coreComponent
+        fun coreComponent(context: Context) = (context.applicationContext as MyApplication).coreComponent
     }
 
     override fun attachBaseContext(base: Context) {
@@ -35,5 +33,4 @@ open class MyApplication : Application() {
     }
 }
 
-fun Activity.coreComponent() =
-    MyApplication.coreComponent(this)
+fun Activity.coreComponent() = MyApplication.coreComponent(this)

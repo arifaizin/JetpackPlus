@@ -15,7 +15,6 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:icon">
-<!--        <activity android:name="com.arifaizin.jetpackpro.ui.activity.FavoriteActivity" />-->
         <activity
             android:name="com.arifaizin.jetpackpro.ui.activity.MainTabActivity"
             android:configChanges="screenSize|keyboard|orientation"

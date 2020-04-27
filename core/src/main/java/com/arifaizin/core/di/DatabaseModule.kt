@@ -8,11 +8,10 @@ import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
 
-//TODO 3 : Add @Module - Ngasih tau dagger bagaimana suatu kelas terbentuk
 @Module
 class DatabaseModule {
     @Singleton
-    @Provides // Tells Dagger that the Room instance will come from here
+    @Provides
     fun provideDatabase(context: Context): MovieDatabase = Room.databaseBuilder(
         context,
         MovieDatabase::class.java, "Movie.db"
