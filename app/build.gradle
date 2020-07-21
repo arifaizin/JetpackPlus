@@ -116,4 +116,7 @@ dependencies {
     kaptAndroidTest 'com.google.dagger:dagger-compiler:2.26'
 
     testImplementation 'org.robolectric:robolectric:4.3.1'
+
+    implementation "net.zetetic:android-database-sqlcipher:4.4.0"
+    implementation "androidx.sqlite:sqlite:2.1.0"
 }
