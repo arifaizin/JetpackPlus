@@ -23,7 +23,9 @@ class DatabaseModule {
         return Room.databaseBuilder(
             context,
             MovieDatabase::class.java, "Movie.db"
-        ).openHelperFactory(factory).build()
+        )
+            .openHelperFactory(factory)
+            .build()
     }
 
     @Singleton
