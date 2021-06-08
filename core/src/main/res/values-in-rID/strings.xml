@@ -11,6 +11,6 @@
     <string name="waiting_text">Mohon tunggu sebentar</string>
     <string name="error">Error !</string>
     <string name="something_wrong">Oops.. Terjadi kesalahan</string>
-    <string name="favorite">Favorit</string>
+    <string name="favorite">Favorite</string>
     <string name="no_data">Data Kosong</string>
 </resources>

@@ -72,7 +72,7 @@ class MainTabFragment : Fragment() {
     }
 
     private fun installFavoriteModule() {
-        val splitInstallManager = SplitInstallManagerFactory.create(parentFragment?.requireContext())
+        val splitInstallManager = SplitInstallManagerFactory.create(requireActivity())
         val request = SplitInstallRequest.newBuilder()
             .addModule("favorite")
             .build()

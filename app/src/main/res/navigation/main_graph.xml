@@ -19,8 +19,6 @@
     <include-dynamic
         android:id="@+id/favoriteNav"
         app:moduleName="favorite"
-        app:graphResName="favorite_graph"
-        app:graphPackage="com.arifaizin.jetpackpro.favorite"
-         />
+        app:graphResName="favorite_graph"/>
 
 </navigation>
